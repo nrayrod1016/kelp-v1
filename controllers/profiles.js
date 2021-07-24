@@ -3,11 +3,18 @@ import { Profile } from "..models/profile.js"
 
 export { 
     index, 
-    show 
+    show,
+    edit 
 }
 
 function index(req, res) { 
-
+Profile.find({})
+.then(profiles => { 
+    res.render('profiles/index', { 
+        title: "Kelp Profiles", 
+        profiles,
+    })
+})
 }
 
 function show(req, res) { 
@@ -26,5 +33,18 @@ function show(req, res) {
     .catch(err => { 
     console.log(err)
     res.redirect("/")
+    })
+}
+
+function edit(req, res) { 
+    Profile.findById(req.params.id)
+    .then(profile => { 
+        res.render('profiles/edit', { 
+            profile 
+        })
+    })
+    .catch(err => { 
+        console.log(err)
+        res.redirect('/')
     })
 }

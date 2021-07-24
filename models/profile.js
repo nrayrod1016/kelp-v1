@@ -7,7 +7,10 @@ export {
 const profileSchema = new Schema({
   name: String,
   avatar: String,
-  friends: [{type: Schema.Types.ObjectId, ref: "Profile"}]
+  bio: String,
+  friends: [{type: Schema.Types.ObjectId, ref: "Profile"}], 
+  savedRestaurants: [{type: Schema.Types.ObjectId, ref: "Restaurants"}],
+  favoriteItems: [{type: Schema.Types.ObjectId, ref: "Menu Items"}]
 }, {
   timestamps: true
 })

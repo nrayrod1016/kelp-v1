@@ -10,6 +10,16 @@ import { router as usersRouter } from './routes/users.js'
 
 const app = express()
 
+
+// MongoDB connect 
+import('.config/database.js')
+
+
+
+
+// routes 
+// import {router as indexRouter } from './routes/index.js'
+
 // view engine setup
 app.set(
   'views',
@@ -29,6 +39,9 @@ app.use(
 
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
+app.use('/profiles', profilesRouter)
+
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
