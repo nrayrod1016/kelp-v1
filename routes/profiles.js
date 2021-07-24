@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import * as profileCtrl from "../controllers/profiles.js"
+import * as profilesCtrl from "../controllers/profiles.js"
 
 
 export { 
@@ -8,6 +8,6 @@ export {
 
 const router = Router() 
 
-router.get('/', isLoggedIn, profiles.Ctril.index)
+router.get('/', isLoggedIn, profiles.Ctrl.index)
 router.get('/:id', isLoggedIn, profilesCtrl.show)
 router.get('/:id/edit', isLoggedIn, profilesCtrl.edit) 
