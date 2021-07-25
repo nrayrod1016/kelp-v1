@@ -14,3 +14,6 @@ const restaurantSchema = new.mongooseSchema (
         menuItems: [{type: Schema.Types.ObjectId, ref: "Menu Items"}], 
         reviews: [{type: Schema.Types.ObjectId, ref: "Review"}]
 })
+
+
+const Restaurant = mongoose.model("restaraunt", restaurantSchema)

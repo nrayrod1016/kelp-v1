@@ -8,10 +8,23 @@ export {
 
 
 const reviewSchema = new Schema({
-  rating: {type: Number, min: 1, max: 5},
-  content: String,
-  game: { type: Schema.Types.ObjectId, ref: "Game" },
-  author: { type: Schema.Types.ObjectId, ref: "Profile" },
+  title: { 
+   type: String,
+   required: true
+  }, 
+  content: { 
+    type: String,
+    required: true
+  }, 
+  rating: {
+    type: Number,
+    required: true
+  }, 
+  menuItems: String, 
+  itemsRating: {
+    type: Number,
+    required: true
+  }
 },{
   timestamps: true,
 })
