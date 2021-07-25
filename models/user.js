@@ -10,6 +10,7 @@ const userSchema = new mongoose.Schema(
   {
     email: String,
     googleId: String,
+    avatar: String,
     profile: {type: mongoose.Schema.Types.ObjectId, ref: "Profile"}
   },
   {

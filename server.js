@@ -4,16 +4,15 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
-
+import passport from 'passport'
 import { router as indexRouter } from './routes/index.js'
-// import { router as usersRouter } from './routes/users.js'
 import { router as profilesRouter } from './routes/profiles.js'
 
 const app = express()
 
 
 // MongoDB connect 
-import('.config/database.js')
+// import('.config/database.js')
 
 
 
@@ -39,7 +38,6 @@ app.use(
 )
 
 app.use('/', indexRouter)
-app.use('/users', usersRouter)
 app.use('/profiles', profilesRouter)
 
 

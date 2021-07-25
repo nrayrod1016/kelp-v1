@@ -6,3 +6,11 @@ export {
 }
 
 
+const restaurantSchema = new.mongooseSchema (
+    { 
+        title: String, 
+        imageURL: String, 
+        content: String, 
+        menuItems: [{type: Schema.Types.ObjectId, ref: "Menu Items"}], 
+        reviews: [{type: Schema.Types.ObjectId, ref: "Review"}]
+})
