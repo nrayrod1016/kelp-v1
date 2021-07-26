@@ -6,7 +6,7 @@ export {
 }
 
 
-const restaurantSchema = new.mongooseSchema (
+const restaurantSchema = new mongoose.Schema (
     { 
         title: String, 
         imageURL: String, 
