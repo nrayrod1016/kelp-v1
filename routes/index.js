@@ -1,22 +1,18 @@
 import { Router } from 'express'
 import * as indexCtrl from '../controllers/index.js'
+const router = Router()
 
-export { 
+export {
   router
 }
 
 
-const router = Router()
+// router.get('/', isLoggedIn, indexCtrl.index)
 
-
-
-router.get('/', isLoggedIn, indexCtrl.index)
-
-
-/* GET home page. */
-// router.get('/', function(req, res, next) {
-//   res.render('index', { title: 'KELP' })
-// })
+// The root route renders our only view
+router.get('/', function(req, res) {
+  res.render('index.ejs')
+})
 
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) return next();

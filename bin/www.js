@@ -4,9 +4,13 @@
  * Module dependencies.
  */
 
-import { app } from '../server.js'
-import debug from 'debug'
-import http from 'http'
+ import { app } from '../server.js'
+ import debug from 'debug'
+ import https from 'https'
+ import http from 'http'
+
+ import fs from 'fs'
+ import os from 'os'
 
 /**
  * Get port from environment and store in Express.
@@ -19,11 +23,33 @@ app.set('port', port)
  * Create HTTP server.
  */
 
-const server = http.createServer(app)
+let server
+
+/**
+ * When we're in development we want to run our environment in https so that we
+ * are able to keep our Google OAuth application set to in production. 
+ * 
+ * When we're in production Herkou will manage our certificates for us so we
+ * still want to run our app in http, which lets heroku manage this process.
+ */
+
+// if (process.env.NODE_ENV !== 'production') {
+//   const homedir = os.homedir()
+
+//   const options = {
+//     key: fs.readFileSync(`${homedir}/certs/localhost/localhost.key`),
+//     cert: fs.readFileSync(`${homedir}/certs/localhost/localhost.crt`)
+//   }
+
+//   server = https.createServer(options, app)
+// } else {
+  server = http.createServer(app)
+// }
 
 /**
  * Listen on provided port, on all network interfaces.
  */
+
 
 server.listen(port)
 server.on('error', onError)
@@ -58,7 +84,7 @@ function onError(error) {
     throw error
   }
 
-  const bind = typeof port === 'string'
+  var bind = typeof port === 'string'
     ? 'Pipe ' + port
     : 'Port ' + port
 
