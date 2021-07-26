@@ -2,14 +2,19 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 export {
-  review
+  Review
 }
 
 
 
 const reviewSchema = new Schema({
   title: { 
-   type: String,
+    type: String,
+    required: true
+  },
+  restaurant: { 
+   type: Schema.Types.ObjectId,
+   ref:"Restaurant",
    required: true
   }, 
   content: { 
@@ -23,6 +28,7 @@ const reviewSchema = new Schema({
   menuItems: String, 
   itemsRating: {
     type: Number,
+    min: 1, max: 5,
     required: true
   }
 },{
@@ -32,4 +38,4 @@ const reviewSchema = new Schema({
 
 
 
-const GameReview = mongoose.model("GameReview", gameReviewSchema)
+const Review = mongoose.model("Review", reviewSchema)
