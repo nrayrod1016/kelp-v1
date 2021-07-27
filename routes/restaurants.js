@@ -11,13 +11,14 @@ const router = Router()
 router.get('/', restaurantsCtrl.index)
 
 
-// POST /facts
+
+// POST /restaurants
 // We will already have access to the logged in student on
 // the server, therefore do not use: /students/:id/facts
 router.post('/restaurants', restaurantsCtrl.addRestaurant)
 
 
 
-// DELETE /facts/:id
+// DELETE /restaurants/:id
 router.delete('/restaurants/:id', restaurantsCtrl.delRestaurant)
 

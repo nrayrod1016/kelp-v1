@@ -1,0 +1,40 @@
+<%- include('../partials/html-head') %>
+<h1><%= title %> </h1>
+  
+<%- include('../partials/nav') %>
+
+  <body>
+    <h1>Enter a Restaurant</h1>
+    <form action="/restaurants" method="POST">
+      <label>Airline:
+        <select name="airline">
+          <option value="">n/a</option>
+          <option value="American">American</option>
+          <option value="Southwest">Southwest</option>
+          <option value="United">United</option>
+        </select> </label>
+        <br />
+      <label
+        >Airport:
+        <select name="airport">
+          <option value="DEN" selected>DEN</option>
+          <option value="AUS">AUS</option>
+          <option value="DFW">DFW</option>
+          <option value="LAX">LAX</option>
+          <option value="SAN">SAN</option>
+        </select> </label
+      ><br />
+
+      <label
+        >Flight Number: required between 10 and 9999
+        <input type="text" name="flightNo" /> </label
+      ><br />
+      <div>
+        Departure date:
+        <input type="datetime-local" name="date" />
+      </div>
+
+      <button type="submit">Submit Flight</button>
+    </form>
+  
+<%- include('../partials/footer') %>

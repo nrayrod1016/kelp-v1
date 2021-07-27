@@ -26,10 +26,14 @@ function index(req, res, next) {
     })
 }
 
+
+
+
+
 function addRestaurant(req, res, next) {
-  // Find the student
+  // Find the rest
   Restaurant.findById(req.user.restaurantProfile._id, function(err, restaurant) {
-    // Push fact (req.body) into student fact array
+    // Push fact (req.body) into rest fact array
     restaurant.facts.push(req.body)
     // Save student
     restaurant.save(function(err) {

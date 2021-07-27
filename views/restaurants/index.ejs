@@ -89,7 +89,7 @@
                     <li class="card-text">
                       <%= fact.text %>
                       <% if (restaurant._id.equals(user?.restaurantProfile._id)) { %>
-                        <form action="/restaurants/facts/<%= fact._id %>?_method=DELETE" method="POST">
+                        <form action="/restaurants/items/<%= fact._id %>?_method=DELETE" method="POST">
                           <button>X</button>
                         </form>  
                       <% } %>
@@ -100,7 +100,7 @@
                 <% if (restaurant._id.equals(user?.restaurantProfile._id)) { %>
                   <div class="card-footer">
                     <form
-                      action="/restaurants/facts"
+                      action="/restaurants/item"
                       method="POST"
                       class="input-group"
                     >
