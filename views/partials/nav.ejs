@@ -1,7 +1,7 @@
 <% if (!user) { %>
-    <link rel="stylesheet" href="/stylesheets/siwg.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
   <% } %>
-  <script src="/javascripts/goose.js"></script>
+  
   </head>
   <body>
   <header class="p-3 bg-dark text-white">
@@ -12,32 +12,27 @@
         <ul
           class="nav col-12 col-lg-auto me-lg-auto mb-2 mb-md-0 justify-content-center"
         >
-          <li>
-            <img 
-                src="/images/icons/gg.png" 
-                alt="Game Goose logo" 
-                class="me-3"
-                onclick="makeQuack()"
-              >
-          </li>
           <li class="d-flex align-items-center mb-2 mb-lg-0 fs-3">
-            <a href="/" class="text-light text-decoration-none">GG</a>
+            <a href="/" class="text-light text-decoration-none">PLEK</a>
           </li>
           <li class="d-flex align-items-center ms-3 mb-2 mb-lg-0">
             <a href="/profiles" class="text-light text-decoration-none">
               View Users
             </a>
           </li>
+
+          <!-- will use section for reviews -->
           <% if (user) { %>
             <li class="d-flex align-items-center ms-3 mb-2 mb-lg-0">
               <a href="/messages" class="text-light text-decoration-none">
-                Message Board
+                Reviews
               </a>
             </li>
 
           <% } %>
-        </ul>
-        <form action="/games/search" method="POST" class="d-flex align-items-center me-3">
+        </ul> 
+    </br>
+        <form action="/restaurants/search" method="POST" class="d-flex align-items-center me-3">
           <input name="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         </form>
         <div class="text-end d-flex align-items-center">
@@ -89,9 +84,9 @@
               </ul>
             </div>
           <% } else { %>
-            <a href="/auth/google" class="siwg-link right item">
-              <button type="submit" class="siwg">
-                <img id="siwg-image" alt="Sign in with Google" />
+            <a href="/auth/google">
+              <button type="submit">
+                <img  alt="Sign in with Google" />
               </button>
             </a>
           <% } %>

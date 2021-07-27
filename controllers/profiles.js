@@ -5,7 +5,9 @@ export {
     index, 
     show,
     edit, 
-    update 
+    update, 
+    addFriend, 
+    removeFriend
 }
 
 function index(req, res) { 
@@ -19,8 +21,8 @@ function index(req, res) {
 }
 
 function show(req, res) { 
-    
         Profile.findById(req.params.id)
+        .populate('friends')
         .then((profile) => { 
             Profile.findById(req.user.profile)
             .then(userProfile => { 
@@ -31,9 +33,9 @@ function show(req, res) {
                 })
             })
         })
-        .catch(err => { 
-        console.log(err)
-        res.redirect("/")
+            .catch(err => { 
+              console.log(err)
+                    res.redirect("/")
         })
 }
 
@@ -61,3 +63,34 @@ function edit(req, res) {
             res.redirect('/')
         })
     }
+
+    function addFriend(req, res) {
+            Profile.findById(req.user.profile)
+            .then(profile => {
+                profile.friends.push(req.params.id)
+                profile.save()
+                .then(() => {
+                    res.redirect(`/profiles/${req.params.id}`)
+                })
+            })
+                    .catch((err) => {
+                        console.log(err)
+                            res.redirect()
+                    })
+    }
+
+
+    function removeFriend(req, res) {
+            Profile.findById(req.user.profile)
+            .then(profile => {
+                profile.friends.remove({_id: req.params.id})
+                profile.save()
+                .then(() => {
+                    res.redirect(`/profiles/${req.params.id}`)
+                })
+            })
+                .catch(err => { 
+                    console.log(err)
+                    res.redirect('/')
+                })
+            } 

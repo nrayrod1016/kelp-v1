@@ -8,12 +8,19 @@ import logger from 'morgan'
 import methodOverride from 'method-override'
 import passport from 'passport'
 import { passUserToView } from './middleware/middleware.js'
+import cors from 'cors'
+
+
+
+// mount require routes
 import { router as indexRouter } from './routes/index.js'
 import { router as restaurantsRouter } from './routes/restaurants.js'
 import { router as authRouter } from './routes/auth.js'
+import { router as profilesRouter } from './routes/profiles.js'
 
 // connect to the MongoDB with mongoose
 import('./config/database.js')
+// connect to the passport database 
 import('./config/passport.js')
 
 // create the Express app
@@ -58,6 +65,7 @@ app.use(passport.session())
 app.use('/', indexRouter)
 app.use('/restaurants', restaurantsRouter)
 app.use('/auth', authRouter)
+app.use('/profiles', profilesRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

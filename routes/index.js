@@ -10,8 +10,8 @@ export {
 // router.get('/', isLoggedIn, indexCtrl.index)
 
 // The root route renders our only view
-router.get('/', function(req, res) {
-  res.render('index.ejs')
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'KELP by kelp' })
 })
 
 function isLoggedIn(req, res, next) {
