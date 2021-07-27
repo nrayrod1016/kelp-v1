@@ -26,6 +26,10 @@ function index(req, res, next) {
     })
 }
 
+function show (req, res) { 
+      
+
+}
 
 
 
@@ -34,11 +38,11 @@ function addRestaurant(req, res, next) {
   // Find the rest
   Restaurant.findById(req.user.restaurantProfile._id, function(err, restaurant) {
     // Push fact (req.body) into rest fact array
-    restaurant.facts.push(req.body)
+    restaurant.restaurant._id.push(req.body)
     // Save student
     restaurant.save(function(err) {
       // Redirect back to /students
-      res.redirect('/restaurants')
+      res.render('/restaurants/new')
     })
 
   })
