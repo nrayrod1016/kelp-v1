@@ -17,6 +17,7 @@ import { router as indexRouter } from './routes/index.js'
 import { router as restaurantsRouter } from './routes/restaurants.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as profilesRouter } from './routes/profiles.js'
+import { router as reviewsRouter } from './routes/reviews.js'
 
 // connect to the MongoDB with mongoose
 import('./config/database.js')
@@ -60,12 +61,17 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 
+ app.use(passUserToView)
+
 
 // mount all routes with appropriate base paths
 app.use('/', indexRouter)
 app.use('/restaurants', restaurantsRouter)
 app.use('/auth', authRouter)
 app.use('/profiles', profilesRouter)
+app.use('/reviews', reviewsRouter) 
+
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

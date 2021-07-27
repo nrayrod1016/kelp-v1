@@ -1,30 +1,24 @@
-<% if (!user) { %>
-    <link rel="stylesheet" href="/stylesheets/style.css">
-  <% } %>
+
   
   </head>
   <body>
-  <header class="p-3 bg-dark text-white">
-    <nav class="container">
-      <div
-        class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
-      >
-        <ul
-          class="nav col-12 col-lg-auto me-lg-auto mb-2 mb-md-0 justify-content-center"
-        >
-          <li class="d-flex align-items-center mb-2 mb-lg-0 fs-3">
-            <a href="/" class="text-light text-decoration-none">PLEK</a>
+  <header>
+    <nav">
+      <div>
+        <ul>
+          <li>
+            <a href="/">PLEK</a>
           </li>
-          <li class="d-flex align-items-center ms-3 mb-2 mb-lg-0">
-            <a href="/profiles" class="text-light text-decoration-none">
+          <li>
+            <a href="/profiles">
               View Users
             </a>
           </li>
 
           <!-- will use section for reviews -->
           <% if (user) { %>
-            <li class="d-flex align-items-center ms-3 mb-2 mb-lg-0">
-              <a href="/messages" class="text-light text-decoration-none">
+            <li>
+              <a href="/messages">
                 Reviews
               </a>
             </li>
@@ -35,7 +29,7 @@
         <form action="/restaurants/search" method="POST" class="d-flex align-items-center me-3">
           <input name="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         </form>
-        <div class="text-end d-flex align-items-center">
+        <div>
           <% // TODO: Add login logic here %>
           <% if (user) { %>
             <div id="profile-dropdown" class="dropdown text-end">
@@ -55,29 +49,21 @@
                 <% } else { %>
                   <img
                     class="avatar-img"
-                    src="/images/icons/user-small.png" 
                     alt="A placeholder avatar"
                   >
                 <% } %> 
               </a>
-              <ul 
-                class="dropdown-menu bg-secondary" 
-                aria-labelledby="dropdownUser"
-              >
+             <!-- dropdown menu -->
+              <ul >
                 <li>
-                  <a 
-                    href="/profiles/<%= user.profile._id %>" 
-                    class="dropdown-item bg-secondary text-white"
-                  >
+                  <ahref="/profiles/<%= user.profile._id %>">
                     My Profile
                   </a>
                 </li>
                 <li><hr class="dropdown-divider bg-secondary text-white"></li>
                 <li>
                   <a 
-                    href="/auth/logout" 
-                    class="dropdown-item bg-secondary text-white"
-                  >
+                    href="/auth/logout">
                     Sign Out
                   </a>
                 </li>

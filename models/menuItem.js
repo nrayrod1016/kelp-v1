@@ -14,7 +14,7 @@ const profileSchema = new Schema({
       type: String,
       required: true 
   },   
-  ImageURL: String,
+  imageURL: String,
   madeBy: [{type: Schema.Types.ObjectId, ref: "Restaurants"}],
   reviews: [{type: Schema.Types.ObjectId, ref: "Review"}]
 
