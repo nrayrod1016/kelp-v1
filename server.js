@@ -7,7 +7,7 @@ import session from 'express-session'
 import logger from 'morgan'
 import methodOverride from 'method-override'
 import passport from 'passport'
-
+import { passUserToView } from './middleware/middleware.js'
 import { router as indexRouter } from './routes/index.js'
 import { router as restaurantsRouter } from './routes/restaurants.js'
 import { router as authRouter } from './routes/auth.js'
@@ -31,6 +31,13 @@ app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(
+  express.static(
+    path.join(path.dirname(fileURLToPath(import.meta.url)), 'public')
+  )
+)
+
+//  middleware session
+app.use(
   session({
     secret: process.env.SESSION_SECRET,
     resave: false,
@@ -41,14 +48,11 @@ app.use(
   })
 )
 
+//  passport middleware
 app.use(passport.initialize())
 app.use(passport.session())
 
-app.use(
-  express.static(
-    path.join(path.dirname(fileURLToPath(import.meta.url)), 'public')
-  )
-)
+
 
 // mount all routes with appropriate base paths
 app.use('/', indexRouter)
