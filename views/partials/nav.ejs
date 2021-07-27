@@ -1,6 +1,6 @@
 
   
-  </head>
+  
   <body>
   <header>
     <nav">
@@ -19,13 +19,21 @@
           <!-- will use section for reviews -->
           <% if (user) { %>
             <li>
-              <a href="/messages">
+              <a href="/reviews">
                 Reviews
               </a>
             </li>
-    <a href="/restaurants">Dope Spots Directory</a>
-    <a href="/restaurants/new">ADD A SPOT BRUH</a>
-  
+            <li>
+            <a href="/restaurants">
+                Dope Spots Directory
+            </a>
+        </li>
+        <li>
+            <a href="/restaurants/new">
+                ADD A SPOT BRUH
+            </a>
+        </li>
+        
 
           <% } %>
         </ul> 
@@ -34,7 +42,7 @@
           <input name="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         </form>
         <div>
-          <% // TODO: Add login logic here %>
+          <% // login logic %>
           <% if (user) { %>
             <div id="profile-dropdown" class="dropdown text-end">
               <a 
