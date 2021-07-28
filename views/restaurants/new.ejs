@@ -6,23 +6,35 @@
   <body>
     <h1>Enter a Restaurant</h1>
     <form action="/restaurants" method="POST">
-      <label>Restaurant:
+      <label>Restaurant Name:
         <input value="input" name="title" placeholder="enter restaurant">
         <br />
 
-        <label>Review
-          <input value="input" selected>NYC</input>
-        </select> </label
-      ><br />
-
+       
+          <label>Restaurant Description
+            <input value="input" name="title" placeholder="enter restaurant">
+            <br />
+            <label>ImgageURL
+              <input  name="title" placeholder="enter imageUrl">
+              <br />
     <label>City
         <select name="city">
           <option value="NYC" selected>NYC</option>
         </select> </label
-      ><br />
+      ><br /> 
+
+      <label for="avatar-input" class="form-label">Avatar</label>
+      <input 
+        type="url" 
+        class="form-control" 
+        id="avatar-input"
+        name="avatar"
+        value="<%= restaurant.avatar %>"
+      >
+    </div>
 
       
-      <button type="submit" href="/restaurants/new">Submit Restaurant</button>
+      <button type="submit" href="/restaurants">Submit Restaurant</button>
     </form>
 
     <a href="/restaurants/<%= restaurant.id %>" class="btn btn-primary">Details</a>

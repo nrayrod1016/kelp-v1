@@ -8,7 +8,9 @@ const profileSchema = new Schema({
   name: String,
   avatar: String,
   bio: String,
-  friends: [{type: Schema.Types.ObjectId, ref: "Profile"}], 
+  friends: [{type: Schema.Types.ObjectId, ref: "Profile"}],
+  reviews: [{type: Schema.Types.ObjectId, ref: "Review"}],
+  // stretch below 
   savedRestaurants: [{type: Schema.Types.ObjectId, ref: "Restaurants"}],
   favoriteItems: [{type: Schema.Types.ObjectId, ref: "Menu Items"}]
 }, {
