@@ -86,7 +86,8 @@ function newRestaurant(req, res, next) {
       //find all one restaraunt or many?
       Restaurant.find({})
       .then(restaurant => { 
-        Profile.findById(req.user.profile._id)
+        console.log(Profile)
+        Profile.findById(req.params.id)
         .populate('savedRestaurants')
         .then((profile) => {
         profile.savedRestaurants.push(profile.user.id)

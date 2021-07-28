@@ -19,7 +19,7 @@ router.get('/new', restaurantsCtrl.newRestaurant)
 
 // POST /restaurants
 
-router.post('/restaurants', restaurantsCtrl.addRestaurant)
+router.post('/', restaurantsCtrl.addRestaurant)
 
 // DELETE /restaurants/:id
 router.delete('/restaurants/:id', restaurantsCtrl.delRestaurant)

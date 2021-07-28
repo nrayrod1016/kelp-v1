@@ -7,16 +7,14 @@
     <h1>Enter a Restaurant</h1>
     <form action="/restaurants" method="POST">
       <label>Restaurant Name:
-        <input value="input" name="title" placeholder="enter restaurant">
+        <input  name="title" placeholder="enter restaurant">
         <br />
 
        
           <label>Restaurant Description
             <input value="input" name="title" placeholder="enter restaurant">
             <br />
-            <label>ImgageURL
-              <input  name="title" placeholder="enter imageUrl">
-              <br />
+            
     <label>City
         <select name="city">
           <option value="NYC" selected>NYC</option>
@@ -34,9 +32,8 @@
     </div>
 
       
-      <button type="submit" href="/restaurants">Submit Restaurant</button>
+      <button type="submit">Submit Restaurant</button>
     </form>
 
-    <a href="/restaurants/<%= restaurant.id %>" class="btn btn-primary">Details</a>
-  
+
 <%- include('../partials/footer') %>
