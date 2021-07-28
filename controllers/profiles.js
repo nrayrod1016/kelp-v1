@@ -1,5 +1,5 @@
 import { Profile } from "../models/profile.js"
-
+import { Restaurant } from "../models/restaurant.js"
 
 export { 
     index, 
@@ -26,10 +26,15 @@ function show(req, res) {
         .then((profile) => { 
             Profile.findById(req.user.profile)
             .then(userProfile => { 
-                res.render("profiles/show", { 
-                    title: `${profile.name}'s profile `, 
-                    profile, 
-                    userProfile,
+                Restaurant.find({savedRestaurants:profile.body_id})
+                .then(savedRestaurants => { 
+
+                    res.render("profiles/show", { 
+                        title: `${profile.name}'s profile `, 
+                        profile, 
+                        userProfile,
+                        savedRestaurants
+                    })
                 })
             })
         })

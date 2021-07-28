@@ -65,7 +65,7 @@ function index(req, res, next) {
 // }
 
 
-function newRestaurant(req, res, next) {
+function addRestaurant(req, res, next) {
     Restaurant.create(req.body)
     .then(restaurant => {
       res.render("restaurants/new", { 
@@ -81,9 +81,10 @@ function newRestaurant(req, res, next) {
     // res.render('restaurants/new')
 
 
-    function addRestaurant(req, res) {
-      console.log('emma')
-      console.log(req.body)
+   function newRestaurant(req, res) {
+    res.render('restaurants/new')
+    //   console.log('emma')
+    //   console.log(req.body)
       //find all one restaraunt or many?
       // Restaurant.find({})
       // .then(restaurant => { 
@@ -97,7 +98,7 @@ function newRestaurant(req, res, next) {
       //   })
       //   })
       //     })
-      }
+     }
 
 
 
