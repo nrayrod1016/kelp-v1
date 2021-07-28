@@ -90,7 +90,7 @@ function newRestaurant(req, res, next) {
         Profile.findById(req.params.id)
         .populate('savedRestaurants')
         .then((profile) => {
-        profile.savedRestaurants.push(profile.user.id)
+        profile.restaurants.push(profile.user.id)
         restaurant.save(function(err) {
           res.redirect('/restaurants')
         })
