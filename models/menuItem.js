@@ -5,7 +5,7 @@ export {
   menuItem
 }
 
-const profileSchema = new Schema({
+const menuItemSchema = new Schema({
   title: {
       type: String,
       required: true 

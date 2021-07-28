@@ -1,12 +1,17 @@
 import { response } from 'express'
+import { Profile } from '../models/profile.js'
 import { Restaurant } from '../models/restaurant.js'
 
 export {
   index,
   // search,
+  // create,
+  newRestaurant,
   addRestaurant,
   delRestaurant
 }
+
+
 
 function index(req, res, next) {
   // Make the query object to use with Restaurant.find based on
@@ -21,6 +26,7 @@ function index(req, res, next) {
       if (err) return next(err)
       // Passing restaurants and name, for use in the EJS
       res.render("restaurants/index", { 
+        title: 'Kelp',
         restaurants: restaurants, 
         name: req.query.name,
         user: req.user
@@ -28,9 +34,18 @@ function index(req, res, next) {
     })
 }
 
-// function search (req, res) { 
-//       Restaurant.findById()
-
+// function create(req, res, next) { 
+//     const restaurant = new restaurant(req.body)
+//     restaurant.save(function (err) {
+//       if (err) return res.redirect('/restaurants/new')
+//       res.render('/restaurants')
+//     })
+//     res.render("restaurants/new", { 
+//       title: 'Create Restaurant',
+//       restaurants: restaurants, 
+//       name: req.query.name,
+//       user: req.user
+//     })
 // }
 
 // function search(req, res) { 
@@ -50,13 +65,38 @@ function index(req, res, next) {
 // }
 
 
-function addRestaurant(req, res, next) {
-  Restaurant.findById(req.user.restaurantProfile._id, function(err, restaurant) { 
-    restaurant.push(req.body)
-    restaurant.save(function(err) {
-      res.redirect('/restaurants')
+function newRestaurant(req, res, next) {
+    Restaurant.create(req.body)
+    .then(restaurant => {
+      res.render("restaurants/new", { 
+        title: 'Restaurants',
+        restaurant: restaurant, 
+        name: req.query.name,
+        user: req.user
+     })
+
+
     })
-  }) 
+  }
+    // res.render('restaurants/new')
+
+
+    function addRestaurant(req, res) {
+      console.log('emma')
+      //find all one restaraunt or many?
+      Restaurant.find({})
+      .then(restaurant => { 
+        Profile.findById(req.user.profile._id)
+        .populate('savedRestaurants')
+        .then((profile) => {
+        profile.savedRestaurants.push(profile.user.id)
+        restaurant.save(function(err) {
+          res.redirect('/restaurants')
+        })
+        })
+          })
+      }
+
   // // Find the rest
   // Restaurant.findById(req.user.restaurantProfile._id, function(err, restaurant) {   
   //   Restaurant._id.push(req.body)// Push fact (req.body) into rest fact array
@@ -64,7 +104,6 @@ function addRestaurant(req, res, next) {
   //     res.render('/restaurants/new')// Redirect back to /restaurants/new
   //   })
   // })
-}
 
 
 function delRestaurant(req, res, next) {

@@ -7,21 +7,22 @@
     <h1>Enter a Restaurant</h1>
     <form action="/restaurants" method="POST">
       <label>Restaurant:
-        <select name="enter restaurant">
-          <option value="">n/a</option>
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
-        </select> </label>
+        <input value="input" name="title" placeholder="enter restaurant">
         <br />
-      <label
-        >City
+
+        <label>Review
+          <input value="input" selected>NYC</input>
+        </select> </label
+      ><br />
+
+    <label>City
         <select name="city">
           <option value="NYC" selected>NYC</option>
         </select> </label
       ><br />
+
       
-      <button type="submit">Submit Restaurant</button>
+      <button type="submit" href="/restaurants/new">Submit Restaurant</button>
     </form>
 
     <a href="/restaurants/<%= restaurant.id %>" class="btn btn-primary">Details</a>
