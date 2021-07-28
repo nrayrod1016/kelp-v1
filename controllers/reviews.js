@@ -3,9 +3,15 @@ import { Review } from '../models/review.js'
 
 export { 
 
-    create
+    create,
+    // new
 }
 
+// function new(req, res) { 
+ 
+
+
+// }
 function create(req, res) {
     // Add author/game info to req.body (for when we use model.create)
     req.body.author = req.user.profile._id
@@ -13,7 +19,7 @@ function create(req, res) {
     // Create the review
     review.create(req.body)
     .then(review => {
-      // Add the review reference to the Game
+      // Add the review reference to the restaurant
       Restaurant.findById(req.params.id)
       .then(restaurant=> {
         restaurant.reviews.push(review._id)

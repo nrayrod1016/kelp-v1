@@ -19,5 +19,3 @@ router.post('/restauarnts', restaurantsCtrl.addRestaurant)
 
 // DELETE /facts/:id
 router.delete('/restaurants/:id', restaurantsCtrl.delRestaurant)
-
-

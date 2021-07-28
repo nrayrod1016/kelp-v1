@@ -33,18 +33,18 @@ let server
  * still want to run our app in http, which lets heroku manage this process.
  */
 
-// if (process.env.NODE_ENV !== 'production') {
-//   const homedir = os.homedir()
+if (process.env.NODE_ENV !== 'production') {
+  const homedir = os.homedir()
 
-//   const options = {
-//     key: fs.readFileSync(`${homedir}/certs/localhost/localhost.key`),
-//     cert: fs.readFileSync(`${homedir}/certs/localhost/localhost.crt`)
-//   }
+  const options = {
+    key: fs.readFileSync(`${homedir}/certs/localhost/localhost.key`),
+    cert: fs.readFileSync(`${homedir}/certs/localhost/localhost.crt`)
+  }
 
-//   server = https.createServer(options, app)
-// } else {
+  server = https.createServer(options, app)
+} else {
   server = http.createServer(app)
-// }
+}
 
 /**
  * Listen on provided port, on all network interfaces.

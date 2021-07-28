@@ -83,28 +83,23 @@ function newRestaurant(req, res, next) {
 
     function addRestaurant(req, res) {
       console.log('emma')
+      console.log(req.body)
       //find all one restaraunt or many?
-      Restaurant.find({})
-      .then(restaurant => { 
-        console.log(Profile)
-        Profile.findById(req.params.id)
-        .populate('savedRestaurants')
-        .then((profile) => {
-        profile.restaurants.push(profile.user.id)
-        restaurant.save(function(err) {
-          res.redirect('/restaurants')
-        })
-        })
-          })
+      // Restaurant.find({})
+      // .then(restaurant => { 
+      //   console.log(Profile)
+      //   Profile.findById(req.params.id)
+      //   .populate('savedRestaurants')
+      //   .then((profile) => {
+      //   profile.restaurants.push(profile.user.id)
+      //   restaurant.save(function(err) {
+      //     res.redirect('/restaurants')
+      //   })
+      //   })
+      //     })
       }
 
-  // // Find the rest
-  // Restaurant.findById(req.user.restaurantProfile._id, function(err, restaurant) {   
-  //   Restaurant._id.push(req.body)// Push fact (req.body) into rest fact array
-  //   restaurant.save(function(err) {// Save restaurant
-  //     res.render('/restaurants/new')// Redirect back to /restaurants/new
-  //   })
-  // })
+
 
 
 function delRestaurant(req, res, next) {

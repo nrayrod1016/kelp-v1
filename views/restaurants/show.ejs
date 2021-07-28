@@ -1,23 +1,29 @@
-<%# This is where we'll display a button to add/remove the game from your collection %> 
-<% if (!restaurant?.collectedBy.some(profile => profile._id.equals(user.profile._id))) { %>
-<form 
-class="text-center" 
-action="/restaurant/addToCollection" 
-method="POST"
->
-<button class="btn btn-primary">
-  Save 
-</button> 
-</form>
-<% } %>
-<% if (restaurant?.collectedBy.some(profile => profile._id.equals(user.profile._id))) { %>
-<form 
-class="text-center" 
-action="/restaurants/<%= restaurant.id %>/removeFromCollection?_method=DELETE" 
-method="POST"
->
-<button class="btn btn-danger">
-  Remove From Saved
-</button>
-</form>
-<% } %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Profile</title>
+</head>
+<body>
+<!-- add image -->
+
+
+<!-- Show restaurant description linked from all restaurants  -->
+
+
+
+<!-- add review form   -->
+
+
+
+<!--  add review section   -->
+
+
+
+
+
+  
+</body>
+</html>

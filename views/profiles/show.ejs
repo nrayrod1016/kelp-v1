@@ -86,6 +86,30 @@
       <div
         class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g1 px-1"
       >
+
+      <%# This is where we'll display a button to add/remove the game from your collection %> 
+<% if (!restaurant?.collectedBy.some(profile => profile._id.equals(user.profile._id))) { %>
+  <form 
+  class="text-center" 
+  action="/restaurant/addToCollection" 
+  method="POST"
+  >
+  <button class="btn btn-primary">
+    Save 
+  </button> 
+  </form>
+  <% } %>
+  <% if (restaurant?.collectedBy.some(profile => profile._id.equals(user.profile._id))) { %>
+  <form 
+  class="text-center" 
+  action="/restaurants/<%= restaurant.id %>/removeFromCollection?_method=DELETE" 
+  method="POST"
+  >
+  <button class="btn btn-danger">
+    Remove From Saved
+  </button>
+  </form>
+  <% } %>
       <%# This is where we'll display our friends %> 
       <% profile.friends.forEach(friend => { %>
         <div class="col">
