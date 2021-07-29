@@ -6,7 +6,7 @@ export {
   index,
   newRestaurant,
   addRestaurant as create,
-  delRestaurant,
+  // delRestaurant,
   restaurantProfile as show
   // search
 }
@@ -48,7 +48,7 @@ function index(req, res, next) {
 
 function addRestaurant(req, res) {
   console.log(req.user)
-  req.body.profile = req.user.profile._id
+  // req.body.profile = req.user.profile._id
   
     Restaurant.create(req.body)
     .then(restaurant => {
@@ -83,17 +83,17 @@ function addRestaurant(req, res) {
 
 
 
-function delRestaurant(req, res, next) {
-  // Find Restaurant
-  Restaurant.findById(req.user.restaurantProfile._id)
-  .then(restaurant => {
-    restaurant.remove({_id: req.params.id})// Remove res using remove()
-    restaurant.save()
-    .then(()=> {
-      res.redirect('/restaurants')// Redirect back to /restaurants
-    })
-  })
-}
+// function delRestaurant(req, res, next) {
+//   // Find Restaurant
+//   Restaurant.findById(req.user.profile._id)
+//   .then(restaurant => {
+//     restaurant.remove({_id: req.params.id})// Remove res using remove()
+//     restaurant.save()
+//     .then(()=> {
+//       res.redirect('/restaurants')// Redirect back to /restaurants
+//     })
+//   })
+// }
 
 function restaurantProfile(req, res) { 
   //  find individual restaurant profile r

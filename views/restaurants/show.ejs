@@ -10,45 +10,46 @@
 </button>Restaurant Description</button>
 
 <!-- post reviews here  -->
-<section> 
-  <% restaurant.reviews.forEach(function(review) { %>
-    <div class="card-header">
-       <a href="/reviews/<%= review._id %>"> <%= review.title %> </a>
-    </div>
-    <div class="card-body">
-      <blockquote class="blockquote mb-0">
-        <p><%= review.content %></p>
-        <footer class="blockquote-footer"><%= review.author.title %></footer>
-      <a href="/reviews/<%= review._id %>"><button>reply to post</button></a>
+<!-- Update to restaurant -->
 
 
-<% }) %> 
+      
+      
+      
+      
+      
+      <!-- add review form   -->
+      <form action="/reviews/<%=restaurant._id%>" method="POST"  >
+        <div class="mb-3">
+          <label>Review</label>
+          <input name="title"  placeholder="Restaurant">
+        </div>
+        <div class="mb-3">
+          <label>leave review</label>
+            <textarea name="content" rows="3"></textarea>
+          </div> 
+        </br>
+        
+        
+        <!-- <label for="exampleFormControlTextarea1" class="form-label text-light"> 
+          Rating</label>
+          <textarea 
+          name="rating" 
+          class="form-control" 
+          id="exampleFormControlTextarea1" 
+          rows="3"
+></textarea> -->
 
-
-  </section>
-
-
-
-
-
-
-
-
-<!-- add review form   -->
-<form action="/reviews/<%=restaurant._id%>" method="POST"  >
-<div class="mb-3">
-  <label>Review</label>
-  <input name="title"  placeholder="Restaurant">
-</div>
-<div class="mb-3">
-  <labe>leave review</label>
-  <textarea name="content" rows="3"></textarea>
-</div> 
-</br>
-
-
-  <label> Update Rating</label>
-  <input name="rating" min: 1, max: 5></input>
+<!-- RATINGINPUT  -->
+<select 
+class="form-select" name="rating"
+>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select>        
 </div>
 </body>
 </br>
@@ -63,9 +64,71 @@
 
 
 
+<section> 
+  <% restaurant.reviews.forEach(function(review) { %>
+    <div class="card-header">
+       <a href="/reviews/<%= review._id %>"> <%= review.title %> </a>
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p><%= review.content %></p>
+        <footer class="blockquote-footer"><%= review.author.title %></footer>
+      <a href="/reviews/<%= review._id %>"><button>reply to post</button></a>
+   
+      
+       <!--  DELETE BUTTON  -->
+  <!-- <form action="/restaurants/<%= //review._id%>/deleteReview?_method=DELETE" method="POST">  -->
+  <form action="/reviews/<%= review._id%>?_method=DELETE" method="POST"> 
+    <li> 
+ <%= review.title %>
+ <%= //review.delete %> 
+  <button>
+    DELETE
+  </button>
+    </li> 
+    </form>
+
+
+
+
+  </section>
+
+  
+<!--  UPDATE FORM  -->
+  <section> 
+<form action="/reviews/<%= review._id %>?_method=PUT" method="POST">
+  <li> 
+ 
+  <input type="text" name="title"  placeholder="Restaurant"></li> 
+  
+
+  <textarea name="content" rows="3"></textarea>
+</br>     
+
+            <select 
+class="form-select" name="rating"
+>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select></br>     
+
+<button>
+
+  UPDATE
+
+</button>
+</form>
+
+
+
+  </section>
 
 
 
 
 
+<% }) %> 
     <%- include('../partials/footer') %>

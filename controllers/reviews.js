@@ -5,9 +5,38 @@ import { Review } from '../models/review.js'
 export { 
     index,
     create,
-    showReview as show
+    showReview as show,
+    deleteReview as delete, 
+    updateReview as update
 }
 
+function updateReview(req, res) { 
+       Restaurant.findById(req.params.id)
+       .then(restaurant => { 
+
+         Review.findByIdAndUpdate(req.params.id, req.body, {new: true})
+         .then(review => { 
+           res.redirect('/restaurants', { 
+             restaurant, 
+             review
+           })
+       })
+      })
+      
+}
+ 
+function deleteReview(req, res){ 
+  console.log('emma')
+  Review.findByIdAndDelete(req.params.id)
+  .then(review => {
+   
+      res.redirect('/restaurants')
+
+   
+    // find the restaurant
+    // remove the review from the restuarants reviews array 
+  })
+}
 // function new(req, res) { 
   function index(req, res) { 
     Review.find({})
