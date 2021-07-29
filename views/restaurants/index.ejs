@@ -2,7 +2,15 @@
 <%- include('../partials/html-head') %>
  <%- include('../partials/nav') %>
     <div class="container">
-      <h2 class="mt-3 mb-3">Restaurants Section</h2>
+      <h2 class="card-title">Restaurants Section</h2>
+<!--  card title below  -->
+      <h3><%= restaurant.name %>  </h3> 
       <!-- will show here  -->
+      <!-- <a class="text-decoration-none" href="/restaurants/<%=restaurants.forEach(restaurant =>  { %>
+        <%= if (restaurant._id.equals(user?.restaurant._id)) {%>
+    
+        <%= }) %>
+          <% %>  
 
+ 
  <%- include('../partials/footer') %>

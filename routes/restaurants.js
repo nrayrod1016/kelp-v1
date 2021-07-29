@@ -7,7 +7,7 @@ export {
 
 const router = Router()
 
-// GET /students
+// GET /restaurants
 router.get('/', restaurantsCtrl.index)
 
 // router.get('/search', restaurantsCtrl.search)
@@ -19,7 +19,7 @@ router.get('/new', restaurantsCtrl.newRestaurant)
 
 // POST /restaurants
 
-router.post('/', restaurantsCtrl.addRestaurant)
+router.post('/', restaurantsCtrl.create)
 
 // DELETE /restaurants/:id
 router.delete('/restaurants/:id', restaurantsCtrl.delRestaurant)
