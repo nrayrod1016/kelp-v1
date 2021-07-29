@@ -53,13 +53,13 @@
     </div>
     <% if (user.profile._id.toString() === profile._id.toString()) { %>
       <%# This is where we'll add the UI to edit a profile %> 
-      <a 
+      <!-- <a 
         class="btn btn-warning"
         role="button" 
         href=""
       >
         Edit Profile
-      </a>
+      </a> -->
       <a 
         class="btn btn-danger ms-4"
         role="button" 
@@ -70,9 +70,9 @@
     <% } %>
     <%# This is where we'll add a button to 'friend/unfriend' a user %> 
     <% if (!profile._id.equals(userProfile._id) && !userProfile.friends.includes(profile._id)) { %>
-        <a href="/profiles/<%= profile._id %>/friend" class="btn btn-primary">
+    <button>    <a href="/profiles/<%= profile._id %>/friend" class="btn btn-primary">
           Add Friend
-        </a>
+        </a></button>
       <% } %>
       <% if (!profile._id.equals(userProfile._id) && userProfile.friends.includes(profile._id)) { %>
         <a href="/profiles/<%= profile._id %>/unfriend" class="btn btn-primary">
@@ -80,16 +80,24 @@
         </a>
       <% } %>
   </section>
+
+
+
+ <!--  display restaurants  -->
+ <h2 class="mb-3"><%= profile.name %>'s restaurants</h2>
+ <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g5 px-1">
+
+
+
   <section class="bg-light pt-3">
     <div class="container">
       <h2 class="mb-3"><%= profile.name %>'s friends</h2>
       <div
         class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g1 px-1"
       >
-      <!-- display user restaurants -->
-<%= restaurants._id.forEach({ 
-  <h2> </h2>
-}) %> 
+
+     
+
     
       <%# This is where we'll display our friends %> 
       <% profile.friends.forEach(friend => { %>
@@ -122,7 +130,8 @@
             </div>
             <% }) %>
       </div>
-      <h2 class="mb-3"><%= profile.name %>'s restaurant</h2>
+      <!-- display user restaurants -->
+      <h2 class="mb-3"><%= profile.name %>'s restaurants</h2>
       <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g5 px-1">
         <%# This is where we'll loop over our games! %> 
       </div>

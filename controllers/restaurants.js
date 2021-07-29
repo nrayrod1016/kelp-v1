@@ -82,7 +82,12 @@ function addRestaurant(req, res, next) {
 
 
    function newRestaurant(req, res) {
-    res.render('restaurants/new')
+    res.render('restaurants/new', { 
+      title: 'Restaurants',
+      imageURL: 'avatar',
+     
+      
+    })
     //   console.log('emma')
     //   console.log(req.body)
       //find all one restaraunt or many?
