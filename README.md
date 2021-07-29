@@ -1,6 +1,10 @@
-# sei-students
+# Kelp 
+# add image 
 
-## These commands to pull the most recent version of the code from the repo, (and overwriting your current code) are:
+# Bio 
+## enter app description 
+
+
 
 ```bash
 git fetch --all
