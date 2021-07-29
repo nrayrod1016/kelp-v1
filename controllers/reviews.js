@@ -11,19 +11,17 @@ export {
 }
 
 function updateReview(req, res) { 
+  console.log('emma')
        Restaurant.findById(req.params.id)
        .then(restaurant => { 
 
          Review.findByIdAndUpdate(req.params.id, req.body, {new: true})
          .then(review => { 
-           res.redirect('/restaurants', { 
-             restaurant, 
-             review
-           })
-       })
-      })
+           res.redirect('/restaurants')
+        })
+     })
       
-}
+ }
  
 function deleteReview(req, res){ 
   console.log('emma')
@@ -86,7 +84,6 @@ function create(req, res) {
          title: 'Reviews',
          review
        })
-      
     })
   }
 
