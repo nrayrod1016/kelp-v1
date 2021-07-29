@@ -5,7 +5,7 @@ import { Review } from '../models/review.js'
 export { 
     index,
     create,
-    addReview as show
+    showReview as show
 }
 
 // function new(req, res) { 
@@ -25,7 +25,7 @@ export {
 // }
 function create(req, res) {
     // Add author/resinfo to req.body (for when we use model.create)
-    req.body.profile = req.user.profile._id
+    req.body.author = req.user.profile._id
     req.body.restaurant = req.params.id
     // Create the review
     Review.create(req.body)
@@ -42,7 +42,7 @@ function create(req, res) {
     })
   }
 // add review function 
-  function addReview(req, res) { 
+  function showReview(req, res) { 
      Review.findById(req.params.id)
      .populate('author')
      .populate({
