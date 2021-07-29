@@ -1,19 +1,28 @@
-```<%- include('../partials/html-head') %>
+<%- include('../partials/html-head') %>
 <h1><%= title %> </h1>
-<%= restaurant.title %> 
+<%= //restaurant.title %> 
 <%- include('../partials/nav') %>
 <title> Restaurant Profile Page </title> 
 <body>
-    <h1> <%= restaurant._id %> </h1>
+    <h1> <%= restaurant.title %> </h1>
 <!-- add image -->
 <img src="<%=restaurant._id.imageURL %> ">
 </button>Restaurant Description</button>
 
 <!-- post reviews here  -->
 <section> 
+  <% restaurant.reviews.forEach(function(review) { %>
+    <div class="card-header">
+       <a href="/reviews/<%= review._id %>"> <%= review.title %> </a>
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p><%= review.content %></p>
+        <footer class="blockquote-footer"><%= review.author.name %></footer>
+      <a href="/reviews/<%= review._id %>"><button>reply to post</button></a>
 
 
-
+<% }) %> 
 
 
   </section>
@@ -26,20 +35,20 @@
 
 
 <!-- add review form   -->
-<form action="/restaurants/"<%=restaurant._id %> >
+<form action="/reviews/<%=restaurant._id%>" method="POST"  >
 <div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Review</label>
-  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Restaurant">
+  <label>Review</label>
+  <input name="title"  placeholder="Restaurant">
 </div>
 <div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label">leave review</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  <labe>leave review</label>
+  <textarea name="content" rows="3"></textarea>
 </div> 
 </br>
 
 
-  <label for="exampleFormControlTextarea1" class="form-label"> Update Rating</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  <label> Update Rating</label>
+  <input name="rating" min: 1, max: 5></input>
 </div>
 </body>
 </br>
@@ -59,4 +68,4 @@
 
 
 
-    <%- include('../partials/footer') %>```
+    <%- include('../partials/footer') %>

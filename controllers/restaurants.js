@@ -98,11 +98,14 @@ function delRestaurant(req, res, next) {
 function restaurantProfile(req, res) { 
   //  find individual restaurant profile r
   Restaurant.findById(req.params.id) 
+  .populate('reviews')
   // .then pass restaurant 
   .then(restaurant => {
+    console.log('this is the restaurant', restaurant)
     res.render('restaurants/show', {
       title: `${restaurant.name} page`,
       restaurant, 
+
   })
   })
   // restaurant.

@@ -1,13 +1,24 @@
+import { render } from 'ejs'
 import { Restaurant } from '../models/restaurant.js'
 import { Review } from '../models/review.js'
 
 export { 
-
+    index,
     create,
     addReview as show
 }
 
 // function new(req, res) { 
+  function index(req, res) { 
+    Review.find({})
+    .then(review => { 
+      render('restaurants/show', { 
+        title: Restaurants,
+        review: reviews
+      })
+    })
+
+  }
  
 
 
@@ -17,7 +28,7 @@ function create(req, res) {
     req.body.profile = req.user.profile._id
     req.body.restaurant = req.params.id
     // Create the review
-    review.create(req.body)
+    Review.create(req.body)
     .then(review => {
       // Add the review reference to the restaurant
       Restaurant.findById(req.params.id)
@@ -25,18 +36,30 @@ function create(req, res) {
         restaurant.reviews.push(review._id)
         restaurant.save()
         .then(() => {
-          res.redirect(`/profiles}`)
+          res.redirect(`/profiles`)
         })
       })
     })
   }
 // add review function 
   function addReview(req, res) { 
-    req.body.review = req.
-     review.find(restaurant.revew._id)
+     Review.findById(req.params.id)
+     .populate('author')
+     .populate({
+       path: 'reviews',
+       populate: { 
+         path: 'author'
+       }
+      })
      .then(review => { 
-       review.restaurant._id.push()
-     })
-
-
+       console.log("this is the reviews", review)
+       res.render('restaurants/show', { 
+         title: 'Reviews',
+         review
+       })
+      
+    })
   }
+
+
+
