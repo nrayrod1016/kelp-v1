@@ -4,13 +4,14 @@
     <div class="container">
       <h2 class="card-title">Restaurants Section</h2>
 <!--  card title below  -->
-      <h3><%= restaurant.name %>  </h3> 
-      <!-- will show here  -->
-      <!-- <a class="text-decoration-none" href="/restaurants/<%=restaurants.forEach(restaurant =>  { %>
-        <%= if (restaurant._id.equals(user?.restaurant._id)) {%>
-    
-        <%= }) %>
-          <% %>  
-
- 
+<!-- will show here  -->
+<% restaurants.forEach(restaurant => { %>
+  
+  <h3><%= restaurant.title %>  </h3> 
+    <img src="<%= restaurant.avatar %>" alt="">
+   
+      
+          <% }) %>
+          
+        </div>
  <%- include('../partials/footer') %>

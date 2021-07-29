@@ -4,7 +4,7 @@ import { Review } from '../models/review.js'
 export { 
 
     create,
-    // new
+    addReview as show
 }
 
 // function new(req, res) { 
@@ -29,4 +29,10 @@ function create(req, res) {
         })
       })
     })
+  }
+// add review function 
+  function addReview(req, res) { 
+      
+
+
   }

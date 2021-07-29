@@ -36,6 +36,12 @@
         <li class="nav-item">
           <a class="nav-link"  href="/profiles">View Users</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link"  href="/restaurants/new">Post Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  href="/restaurants/new">Reviews</a>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Link
@@ -45,7 +51,7 @@
             <li><a class="dropdown-item" href="/restaurants">Dope Spots</a></li>
             <% if (user) { %>
             <li><a class="dropdown-item" href="/restaurants/new">Post Up</a></li>
-            <li><hr class="dropdown-divider"> Reviews</li>  
+            <li><hr class="dropdown-divider">Reviews</li>  
             <% } %>
           </ul>
         </li>
@@ -68,7 +74,7 @@
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        <% if(user?.profile.avatar) {%>
+        <% if(user?.profile?.avatar) {%>
           <img 
             class="rounded-circle avatar-img"
             src="<%= user.profile.avatar %>" 
@@ -84,16 +90,16 @@
      <!-- dropdown menu -->
       <ul >
         <li>
-          <a href="/profiles/<%= user.profile._id %>">
+          <button> <a href="/profiles/<%= user.profile?._id %>">
             My Profile
-          </a>
+          </a></button>
         </li>
         <li><hr class="dropdown-divider bg-secondary text-white"></li>
         <li>
-          <a 
+          <button><a 
             href="/auth/logout">
             Sign Out
-          </a>
+          </a></button>
         </li>
       </ul>
     </div>

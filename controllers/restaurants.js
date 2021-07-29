@@ -15,12 +15,13 @@ export {
 function index(req, res, next) {
     Restaurant.find({})
     .then(restaurants => {
+      console.log(restaurants)
         // Passing restaurants and name, for use in the EJS
         res.render("restaurants/index", { 
           title: 'Kelp',
           restaurants: restaurants, 
         
-          user: req.user
+        
         })
       })
     
@@ -45,6 +46,9 @@ function index(req, res, next) {
 
 
 function addRestaurant(req, res) {
+  console.log(req.user)
+  req.body.profile = req.user.profile._id
+  
     Restaurant.create(req.body)
     .then(restaurant => {
       Profile.findById(req.user.profile._id)
@@ -54,7 +58,6 @@ function addRestaurant(req, res) {
         res.render("restaurants/new", { 
           title: 'Restaurants',
           restaurant: restaurant
-          
         })
       })
     })
