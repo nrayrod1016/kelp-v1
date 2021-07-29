@@ -33,6 +33,7 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/restaurants">Dope Spots</a>
         </li>
+        <% if (user) { %>
         <li class="nav-item">
           <a class="nav-link"  href="/profiles">View Users</a>
         </li>
@@ -42,16 +43,8 @@
         <li class="nav-item">
           <a class="nav-link"  href="/restaurants/new">Reviews</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Link
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-            <li><a class="dropdown-item" href="/profiles">View Users</a></li>
-            <li><a class="dropdown-item" href="/restaurants">Dope Spots</a></li>
-            <% if (user) { %>
-            <li><a class="dropdown-item" href="/restaurants/new">Post Up</a></li>
-            <li><hr class="dropdown-divider">Reviews</li>  
+       
+          
             <% } %>
           </ul>
         </li>
