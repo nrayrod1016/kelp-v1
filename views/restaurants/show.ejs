@@ -1,48 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restaurant Profile</title>
-</head>
+```<%- include('../partials/html-head') %>
+<h1><%= title %> </h1>
+<%= restaurant.title %> 
+<%- include('../partials/nav') %>
+<title> Restaurant Profile Page </title> 
 <body>
+    <h1> <%= restaurant._id %> </h1>
 <!-- add image -->
-<img src="<%=restaurant._id.imageURL %> "
+<img src="<%=restaurant._id.imageURL %> ">
+</button>Restaurant Description</button>
 
-<!-- Show restaurant description linked from all restaurants  -->
-</button>Game Description</button>
+<!-- post reviews here  -->
+<section> 
+
+
+
+
+
+  </section>
+
+
+
+
+
+
+
 
 <!-- add review form   -->
+<form action="/restaurants/"<%=restaurant._id %> >
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Review</label>
   <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Restaurant">
 </div>
 <div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+  <label for="exampleFormControlTextarea1" class="form-label">leave review</label>
   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-</div>
+</div> 
 </br>
 
-<div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Email address</label>
-  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Review">
-</div>
-<div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+
+  <label for="exampleFormControlTextarea1" class="form-label"> Update Rating</label>
   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 </div>
 </body>
 </br>
 
-<button> Submit Review  </button>
+<button href="/restaurants"> Submit Review  </button>
 
-<!--  add review section   -->
-
-
+</form> 
 
 
 
-  
-</body>
-</html>
+
+
+
+
+
+
+
+
+
+    <%- include('../partials/footer') %>```

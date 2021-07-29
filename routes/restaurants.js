@@ -24,3 +24,6 @@ router.post('/', restaurantsCtrl.create)
 // DELETE /restaurants/:id
 router.delete('/restaurants/:id', restaurantsCtrl.delRestaurant)
 
+
+// show '/:id'
+router.get('/:id', restaurantsCtrl.show)

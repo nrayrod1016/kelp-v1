@@ -7,6 +7,7 @@ export {
   newRestaurant,
   addRestaurant as create,
   delRestaurant,
+  restaurantProfile as show
   // search
 }
 
@@ -92,4 +93,17 @@ function delRestaurant(req, res, next) {
       res.redirect('/restaurants')// Redirect back to /restaurants
     })
   })
+}
+
+function restaurantProfile(req, res) { 
+  //  find individual restaurant profile r
+  Restaurant.findById(req.params.id) 
+  // .then pass restaurant 
+  .then(restaurant => {
+    res.render('restaurants/show', {
+      title: `${restaurant.name} page`,
+      restaurant, 
+  })
+  })
+  // restaurant.
 }
