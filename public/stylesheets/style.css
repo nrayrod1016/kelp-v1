@@ -1,10 +1,10 @@
-html { 
- 
-}
+
 .navbar { 
   background: #7faa44;
   opacity: 50%;
   width: 100%;
+  width: 50%vw;
+
 
 }
 
@@ -17,7 +17,7 @@ body {
   padding: 50px;
   height: 100vh;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  filter: blur(50%);
+
   
 
 }
@@ -25,6 +25,7 @@ body {
 a {
   color: #71a2b3;
 }
+
 
 
 a:link { 
@@ -37,7 +38,40 @@ list-style-type: none;
 text-align: center;
 }
 
-h1 {
-  align-items: center;
+#home-card .card-body {
+   text-align: center;
   justify-content: center;
+    width: 50%vw;
+}
+
+
+
+
+
+
+
+
+#footnotes{ 
+/* display: inline; */
+font-size: 1px;
+display: inline-block;
+justify-content: space-evenly; 
+font-size: 10px;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(42, 23, 23, 0.297);
+  color: white;
+  text-align: center;
+  opacity: 40%;
+  border: none;
+  font-size: 1px;
+display: inline-block;
+justify-content: space-evenly;
+font-size: 5px;
+ 
 }

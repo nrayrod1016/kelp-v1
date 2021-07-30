@@ -1,9 +1,13 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 <title> Restaurant Profile Page </title> 
+<style> 
+#posts { 
 
+}
+</style> 
 
-    <h1> <%= restaurant.title %> </h1>
+    <h1 id="rest-title"> <%= restaurant.title %> </h1>
 <!-- add image -->
 <img src="<%=restaurant._id.imageURL %> ">
 </button>Restaurant Description</button>
@@ -12,7 +16,7 @@
 <!-- Update to restaurant -->
 
 
-      
+      <div id='posts'>
       
       
       <!-- add review form   -->
@@ -54,7 +58,7 @@
 </body>
 </br>
 
-<button href="/restaurants"> Submit Review  </button>
+<button href="/restaurants"> Submit Review</button>
 
 </form> 
 
@@ -62,7 +66,7 @@
 
 
 
-
+<div id='posts'>
 
 <section> 
   <% restaurant.reviews.forEach(function(review) { %>
@@ -133,4 +137,5 @@ class="form-select" name="rating"
 
 
 <% }) %> 
+</div> 
     <%- include('../partials/footer') %>

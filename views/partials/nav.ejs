@@ -10,10 +10,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav me-auto my-4 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <% if (user) { %>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/restaurants">Dope Spots</a>
         </li>
-        <% if (user) { %>
         <li class="nav-item">
           <a class="nav-link"  href="/profiles">View Users</a>
         </li>
@@ -57,6 +57,7 @@
             alt="Your avatar"
             width="50px"
             height="50px"
+            
           >
         <% } else { %>
           <img
@@ -70,7 +71,7 @@
 
         <ul >
         <ol>
-          <div class="d-grid gap-2 d-md-block"></div>
+          <div class="d-grid gap-2 d-md-block btn-sm-start"></div>
           <button  button type="button" class="btn btn-light btn-sm"> <a href="/profiles/<%= user.profile?._id %>">
             My Profile
           </a></button>
@@ -90,6 +91,7 @@
       <button type="submit">
         <img
           alt="Sign in with Google" 
+          src="/Users/rayro/code/sei/projects/kelp-v1/public/images/Gmail.png"
           >
       </button>
     </a>

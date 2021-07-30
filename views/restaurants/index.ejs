@@ -9,9 +9,37 @@
   
   <a href="/restaurants/<%= restaurant._id %>"><h3><%= restaurant.title %>  </h3> </a>
     <img src="<%= restaurant.avatar %>" alt="">
-   
-      
+    <div class="container py-5 px-3">
+      <div 
+        class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g5 g-sm-3 g-xxl-5 px-sm-5 px-4"
+      >
+        <% restaurants.forEach(restaurant => { %>
+          <div class="card bg-dark" style="width: 18rem;">
+          
+          <% if (restaurants.length >= 1) {%>
+            <img
+            <!-- //src="<%=// restaurant[0].imageUrl %>" -->
+            alt="<%= restaurant.title %>"
+            class="card-img-top"
+            width="250px"
+            height="350px"
+            />
+            <% } else {%>
+              <img
+              class="card-img-top"
+              src="/images/icons/user.png"
+              alt="A placeholder avatar"
+              width="250px"
+              height="350px"
+              />
+              <% } %>  
+              
+            </div>
+        <% }) %> 
+      </div>
+    </div>
           <% }) %>
           
+
         </div>
  <%- include('../partials/footer') %>

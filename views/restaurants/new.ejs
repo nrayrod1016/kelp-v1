@@ -1,15 +1,31 @@
 <%- include('../partials/html-head') %>
 <h1><%= //title %> </h1>
-  
+  <style> 
+
+  button { 
+    padding: 10px;
+  }
+
+  #card { 
+    max-width: 50%;
+    max-height: 50%;
+  }
+  </style> 
 <%- include('../partials/nav') %>
 
-
-
+<div class="card text-center">
+  <div class="card-header">
+   <h1> Create A Restaurant </h1>
+ </div>
+ <div class="card-body">
+  <h5 class="card-title">Enter a Restaurant</h5>
 <form action="/restaurants" method="POST">
-  <h1>Enter a Restaurant</h1>
+  <h1 class="card-text">
+    <!-- Enter a Restaurant -->
+  </h1>
   <div class="row mb-3">
-    <label class="col-sm-2 col-form-label">Name of Restaurant:</label>
-    <div class="col-sm-10">
+    <label class="col-sm-2 col-form-label card-text">Name of Restaurant:</label>
+    <div class="col-sm-8">
       <input name="title" placeholder="enter restaurant">
     </div>
   </div>
@@ -44,7 +60,13 @@
             <option>5</option> 
           </select>
       </div>
-      <button class type="submit" href="/restaurants">Submit Restaurant</button>
+      <button class="btn btn-primary" type="submit" href="/restaurants">
+        Submit Restaurant
+      </button>
+      <div class="card-footer text-muted">
+        2 days ago
+      </div>
+    </div>
       <!-- <div class="form-check">
         <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
         <label class="form-check-label" for="gridRadios2">
@@ -110,4 +132,4 @@
     </form> -->
 
 
-<%- include('../partials/footer') %>
+<%- //include('../partials/footer') %>
