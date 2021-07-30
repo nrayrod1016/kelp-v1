@@ -11,7 +11,7 @@
 #link to site : https://glacial-plains-71834.herokuapp.com/
 
 #ERD
-<img src="public/images/Kelp-v1.png">
+<img src="public/images/Kelp-v1-ERD.png">
 
 
 
