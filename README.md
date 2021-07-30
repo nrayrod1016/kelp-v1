@@ -19,7 +19,7 @@
 <img src="public/trelloboardimage.png">
 
 #Landing Page 
-<img src="public/landingpage.png">
+<img src="public/landing-page.png">
 
 #Restaurant Page 
 <img src="public/restaurantShowpage.png">
