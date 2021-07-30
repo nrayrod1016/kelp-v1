@@ -15,10 +15,8 @@
       
       
       
-      
-      
       <!-- add review form   -->
-      <form action="/reviews/<%=restaurant._id%>" method="POST"  >
+      <form action="/reviews/<%=restaurant._id%>" method="POST">
         <div class="mb-3">
           <label>Review</label>
           <div class="col-md-6">
@@ -43,7 +41,8 @@
 
 <!-- RATINGINPUT  -->
 <select 
-class="form-select" name="rating"
+  class="form-select" 
+  name="rating"
 >
 <option value="1">1</option>
 <option value="2">2</option>
@@ -79,6 +78,8 @@ class="form-select" name="rating"
       
        <!--  DELETE BUTTON  -->
   <!-- <form action="/restaurants/<%= //review._id%>/deleteReview?_method=DELETE" method="POST">  -->
+
+    <% if (user.profile._id.toString() === review.author._id.toString()) { %> 
   <form action="/reviews/<%= review._id%>?_method=DELETE" method="POST"> 
     <li> 
  <%= review.title %>
@@ -93,7 +94,7 @@ class="form-select" name="rating"
 
 
   </section>
-
+<% } %> 
   
 <!--  UPDATE FORM  -->
   <section> 

@@ -38,6 +38,6 @@ text-align: center;
 }
 
 h1 {
-  flex: 50vw;
+  align-items: center;
   justify-content: center;
 }
