@@ -16,10 +16,10 @@
 
 
 #TRELLO 
-<img src="public/images/trelloboardimage.png">
+<img src="public/images/trelloboard.png">
 
 #Landing Page 
-<img src="public/images/landing-page.png">
+<img src="public/images/landingpage.png">
 
 #Restaurant Page 
 <img src="public/images/restaurantShowpage.png">
