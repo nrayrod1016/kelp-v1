@@ -11,8 +11,8 @@ html {
 body {
   /* linear gradient dark green to light green  */
   background: rgb(19,34,56);
-background: linear-gradient(0deg, rgba(19,34,56,1) 15%, rgba(7,87,2,1) 51%, rgba(0,255,8,1) 97%);;
-background-repeat: no-repeat;
+  background: linear-gradient(0deg, rgba(19,34,56,1) 15%, rgba(7,87,2,1) 51%, rgba(0,255,8,1) 97%);;
+  background-repeat: no-repeat;
   background-size: cover;
   padding: 50px;
   height: 100vh;
@@ -23,16 +23,18 @@ background-repeat: no-repeat;
 }
 
 a {
-  color: #bacad0;
+  color: #71a2b3;
 }
 
 
 a:link { 
   text-decoration: none;
 }
+
 button {
 list-style-type: none;
-
+/* display: inline; */
+text-align: center;
 }
 
 h1 {

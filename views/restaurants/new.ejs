@@ -1,11 +1,11 @@
 <%- include('../partials/html-head') %>
-<h1><%= title %> </h1>
+<h1><%= //title %> </h1>
   
 <%- include('../partials/nav') %>
 
 
 
-<form>
+<form action="/restaurants" method="POST">
   <h1>Enter a Restaurant</h1>
   <div class="row mb-3">
     <label class="col-sm-2 col-form-label">Name of Restaurant:</label>
@@ -13,6 +13,8 @@
       <input name="title" placeholder="enter restaurant">
     </div>
   </div>
+  </div>
+
   <!-- restaurant description -->
   <div class="row mb-3">
     <label for="inputPassword3" class="col-sm-2 col-form-label">Restaurant Description</label>
@@ -30,10 +32,10 @@
     </div>
   <!-- rating field  -->
   <fieldset class="row mb-3">
-    <legend class="col-form-label col-sm-2 pt-0">How was it?</legend>
+    <legend class="col-form-label col-sm-2 pt-0">Enter a rating (1-5)</legend>
     <div class="col-sm-10">
       <div class="form-check">
-          <label for="inputState" class="form-label">Enter a rating (1-5)</label>
+          <!-- <label for="inputState" class="form-label">How was it?</label> -->
           <select id="inputState" class="form-select">
             <option selected>1</option>
             <option>2</option>
@@ -42,6 +44,7 @@
             <option>5</option> 
           </select>
       </div>
+      <button class type="submit" href="/restaurants">Submit Restaurant</button>
       <!-- <div class="form-check">
         <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
         <label class="form-check-label" for="gridRadios2">
