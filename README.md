@@ -6,7 +6,8 @@
 - First log in with your google account. 
 - Go to Post up and enter a restaurant name, a short description and a rating. Restaurant has been created in Dope Spots 
 - Go to Dope spots 
-- 
+- select a restaurant and you will be redirected to the restauarnt show page 
+- Users will be able to leave reviews reply to them and delete reviews 
 
 
 #
