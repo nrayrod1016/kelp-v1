@@ -11,18 +11,18 @@
 #link to site : https://glacial-plains-71834.herokuapp.com/
 
 #ERD
-<img src="public/Kelp-v1.png">
+<img src="public/images/Kelp-v1.png">
 
 
 
 #TRELLO 
-<img src="public/trelloboardimage.png">
+<img src="public/images/trelloboardimage.png">
 
 #Landing Page 
-<img src="public/landing-page.png">
+<img src="public/images/landing-page.png">
 
 #Restaurant Page 
-<img src="public/restaurantShowpage.png">
+<img src="public/images/restaurantShowpage.png">
 
 
 
