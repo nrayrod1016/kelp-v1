@@ -3,11 +3,76 @@
   
 <%- include('../partials/nav') %>
 
-  <body>
+
+
+<form>
+  <h1>Enter a Restaurant</h1>
+  <div class="row mb-3">
+    <label class="col-sm-2 col-form-label">Name of Restaurant:</label>
+    <div class="col-sm-10">
+      <input name="title" placeholder="enter restaurant">
+    </div>
+  </div>
+  <!-- restaurant description -->
+  <div class="row mb-3">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Restaurant Description</label>
+    <div class="col-sm-10">
+      <input name="content" placeholder="enter restaurant" class="form-control" id="inputPassword3">
+    </div>
+  </div>
+
+      <!-- city  -->
+    <div class="row mb-3">
+      <label for="inputPassword3" class="col-sm-2 col-form-label">City</label>
+      <div class="col-sm-10">
+        <option name="content" placeholder="enter restaurant" class="form-control" id="inputPassword3">Nyc</option>
+      </div>
+    </div>
+  <!-- rating field  -->
+  <fieldset class="row mb-3">
+    <legend class="col-form-label col-sm-2 pt-0">How was it?</legend>
+    <div class="col-sm-10">
+      <div class="form-check">
+          <label for="inputState" class="form-label">Enter a rating (1-5)</label>
+          <select id="inputState" class="form-select">
+            <option selected>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option> 
+          </select>
+      </div>
+      <!-- <div class="form-check">
+        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+        <label class="form-check-label" for="gridRadios2">
+          2
+        </label>
+      </div>
+      <div class="form-check disabled">
+        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+        <label class="form-check-label" for="gridRadios3">
+          3
+        </label>
+      </div>
+    </div>
+  </fieldset>
+  <div class="row mb-3">
+    <div class="col-sm-10 offset-sm-2">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck1">
+        <label class="form-check-label" for="gridCheck1">
+          Example checkbox
+        </label>
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Sign in</button>
+</form> -->
+  <!-- <body>
     <h1>Enter a Restaurant</h1>
     <form action="/restaurants" method="POST">
       <label>Restaurant Name:
-        <input  name="title" placeholder="enter restaurant">
+        <input name="title" placeholder="enter restaurant">
         <br />
 
        
@@ -22,7 +87,7 @@
       ><br /> 
 
       <label>Rating
-          <input type="rating" min: 1 max: 5>Rate em!
+          <input name="rating" type="rating" min: 1 max: 5>Rate em!
       </label
       ><br /> 
 
@@ -39,7 +104,7 @@
 
       
       <button type="submit" href="/restaurants">Submit Restaurant</button>
-    </form>
+    </form> -->
 
 
 <%- include('../partials/footer') %>

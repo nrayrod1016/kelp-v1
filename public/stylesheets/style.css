@@ -1,16 +1,41 @@
 html { 
  
 }
-.nav { 
+.navbar { 
+  background: #7faa44;
+  opacity: 50%;
+  width: 100%;
 
 }
 
 body {
-  background: #ffffff93;
+  /* linear gradient dark green to light green  */
+  background: rgb(19,34,56);
+background: linear-gradient(0deg, rgba(19,34,56,1) 15%, rgba(7,87,2,1) 51%, rgba(0,255,8,1) 97%);;
+background-repeat: no-repeat;
+  background-size: cover;
   padding: 50px;
+  height: 100vh;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  filter: blur(50%);
+  
+
 }
 
 a {
-  color: #00B7FF;
+  color: #bacad0;
+}
+
+
+a:link { 
+  text-decoration: none;
+}
+button {
+list-style-type: none;
+
+}
+
+h1 {
+  flex: 50vw;
+  justify-content: center;
 }
