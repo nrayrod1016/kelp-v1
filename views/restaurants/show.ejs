@@ -1,11 +1,25 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 <title> Restaurant Profile Page </title> 
-<style> 
+<style>
+  .navbar{ 
+    background: black;
+    opacity: 50%; 
+  }
+#store { 
+  opacity: 30%; 
+  
+} 
+#showPage { 
+  background: rgb(19,34,56);
+  background: linear-gradient(0deg, rgba(19,34,56,1) 15%, rgba(7,87,2,1) 51%, rgba(0,255,8,1) 97%);;
+  height: 110vh;
+  
+}
 
 </style> 
-
-<main class="container">
+<div id="showPage"> 
+<main class="container" id="store">
   <section class="p-4 p-md-5 mb-4 text-white rounded bg-dark mx-4">
     <div class="col-md-8 text-light px-0">
       <h3 class="fs-1 fst-italic"><h1 id="rest-title"> <%= restaurant.title %> </h1>
@@ -99,9 +113,9 @@
 <!--  UPDATE FORM  -->
   <section> 
 <form action="/reviews/<%= review._id %>?_method=PUT" method="POST">
-  <li> 
+  <ol> 
  
-  <input type="text" name="title"  placeholder="Restaurant"></li> 
+  <input type="text" name="title"  placeholder="review title"></ol> 
   
 
   <textarea name="content" rows="3"></textarea>
@@ -134,3 +148,5 @@ class="form-select" name="rating"
 
 <% }) %> 
 </div> 
+
+</div>
