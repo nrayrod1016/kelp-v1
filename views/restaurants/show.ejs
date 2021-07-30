@@ -91,7 +91,7 @@
    
       
        <!--  DELETE BUTTON  -->
-  <!-- <form action="/restaurants/<%= //review._id%>/deleteReview?_method=DELETE" method="POST">  -->
+  
 
     <% if (user.profile._id.toString() === review.author._id.toString()) { %> 
   <form action="/reviews/<%= review._id%>?_method=DELETE" method="POST"> 
@@ -114,10 +114,7 @@
   <section> 
 <form action="/reviews/<%= review._id %>?_method=PUT" method="POST">
   <ol> 
- 
   <input type="text" name="title"  placeholder="review title"></ol> 
-  
-
   <textarea name="content" rows="3"></textarea>
 </br>     
 
