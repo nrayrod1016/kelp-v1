@@ -38,10 +38,6 @@
 #Bootstrap
 
 
-
-#Future Enhancements 
-
-```bash
-git fetch --all
-git reset --hard origin/main
-```
+# Future Enhancements 
+1) Add an api.
+2)  

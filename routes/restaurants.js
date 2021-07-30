@@ -14,10 +14,7 @@ router.get('/', restaurantsCtrl.index)
 
 router.get('/new', restaurantsCtrl.newRestaurant)
 
-//  POST /restaurants/new
-// router.post('/', restaurantsCtrl.create)
 
-// POST /restaurants
 
 router.post('/', restaurantsCtrl.create)
 
