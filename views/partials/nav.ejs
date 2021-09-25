@@ -2,7 +2,7 @@
 
 
 
- <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">PLEK</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,30 +10,26 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav me-auto my-4 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-        <% if (user) { %>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/restaurants">Dope Spots</a>
         </li>
+        <% if (user) { %>
         <li class="nav-item">
           <a class="nav-link"  href="/profiles">View Users</a>
         </li>
         <li class="nav-item">
           <a class="nav-link"  href="/restaurants/new">Post Up</a>
         </li>
-        <!-- <li class="nav-item">
+        <li class="nav-item">
           <a class="nav-link"  href="/restaurants/show">Reviews</a>
-        </li> -->
+        </li>
        
           
             <% } %>
           </ul>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Kelp</a>
-        </li> -->
+        
       </ul>
-
-      <!-- Search form  -->
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
@@ -41,7 +37,7 @@
     </div>
   </div>
   <% if (user) { %>
-    <div id="profile-dropdown" class="dropdown text-center ">
+    <div id="profile-dropdown" class="dropdown text-end">
       <a 
         id="dropdownUser"
         href="#"
@@ -49,15 +45,11 @@
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-      <div class="container"> 
         <% if(user?.profile?.avatar) {%>
           <img 
-            class="rounded-circle avatar-img "
+            class="rounded-circle avatar-img"
             src="<%= user.profile.avatar %>" 
             alt="Your avatar"
-            width="50px"
-            height="50px"
-            
           >
         <% } else { %>
           <img
@@ -66,38 +58,38 @@
           >
         <% } %> 
       </a>
-    </br>
      <!-- dropdown menu -->
-
-        <ul >
-        <ol>
-          <div class="d-grid gap-2 d-md-block btn-sm-start"></div>
-          <button  button type="button" class="btn btn-light btn-sm"> <a href="/profiles/<%= user.profile?._id %>">
-            My Profile
-          </a></button>
-        </ol>
-        <ol><hr class="dropdown-divider bg-secondary text-white"></ol>
-        <ol>
-          <button type="button" class="btn btn-outline-success btn-sm"><a 
-            href="/auth/logout">
-            Sign Out
-          </a></button>
-        </ol>
-      </ul>
+     <ul 
+     class="dropdown-menu bg-secondary" 
+     aria-labelledby="dropdownUser"
+   >
+     <li>
+       <a 
+         href="/profiles/<%= user.profile._id %>" 
+         class="dropdown-item bg-secondary text-white"
+       >
+         My Profile
+       </a>
+     </li>
+     <li><hr class="dropdown-divider bg-secondary text-white"></li>
+     <li>
+       <a 
+         href="/auth/logout" 
+         class="dropdown-item bg-secondary text-white"
+       >
+         Sign Out
+       </a>
+     </li>
+   </ul>
     </div>
-  </br>
   <% } else { %>
     <a href="/auth/google">
       <button type="submit">
-        <img
-          alt="Sign in with Google" 
-          src="/Users/rayro/code/sei/projects/kelp-v1/public/images/Gmail.png"
-          >
+        <img  alt="Sign in with Google" />
       </button>
     </a>
-    
-  </div>
   <% } %>
 </div>
 </div>
 </nav>
+

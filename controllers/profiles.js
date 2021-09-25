@@ -47,9 +47,13 @@ function show(req, res) {
 function edit(req, res) { 
         Profile.findById(req.params.id)
         .then(profile => { 
+            if(req.user.profile._id.toString() === profile._id.toString()){ 
             res.render('profiles/edit', { 
                 profile 
             })
+        } else { 
+            res.redirect()
+        }
         })
         .catch(err => { 
             console.log(err)

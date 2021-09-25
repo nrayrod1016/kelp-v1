@@ -1,3 +1,20 @@
+/* 
+  html{ 
+    background: rgb(19,34,56);
+  background: linear-gradient(0deg, rgba(19,34,56,1) 15%, rgba(7,87,2,1) 51%, rgba(0,255,8,1) 97%);
+  max-height: max-content;
+  }
+
+.home-card 
+.card-body 
+.list-group-item { 
+
+  background:  rgba(0,255,8,1);
+  background: linear-gradient(0deg,  rgba(7,87,2,1) 15%, rgba(7,87,2,1) 51%, rgba(0,255,8,1) 150%);;
+  max-height: max-content;
+}
+
+
 
 .navbar { 
   background: #7faa44;
@@ -10,7 +27,7 @@
 
 body {
   /* linear gradient dark green to light green  */
-  background: rgb(19,34,56);
+  /* background: rgb(19,34,56);
   background: linear-gradient(0deg, rgba(19,34,56,1) 15%, rgba(7,87,2,1) 51%, rgba(0,255,8,1) 97%);;
   background-repeat: no-repeat;
   background-size: cover;
@@ -34,13 +51,13 @@ a:link {
 
 button {
 list-style-type: none;
-/* display: inline; */
+/* display: inline; 
 text-align: center;
 }
-
+/* 
 #home-card{
-display: flex;
-/* text-align: center; */
+display: flex; 
+text-align: center; 
 justify-content: center;
 
 }
@@ -55,7 +72,7 @@ justify-content: center;
 #footnotes{ 
 /* display: inline; */
 
-display: inline-block;
+/* display: inline-block; 
 justify-content: space-evenly; 
 font-size: 10px;
 }
@@ -75,4 +92,4 @@ footer {
   justify-content: space-evenly;
   font-size: 5px;
  
-}
+} */ 

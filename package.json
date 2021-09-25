@@ -7,6 +7,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "boostrap": "^2.0.0",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
     "dotenv": "^10.0.0",
@@ -17,6 +18,7 @@
     "method-override": "^3.0.0",
     "mongoose": "^5.13.3",
     "morgan": "~1.9.1",
+    "node-sass": "^6.0.1",
     "passport": "^0.4.1",
     "passport-google-oauth20": "^2.0.0"
   }
