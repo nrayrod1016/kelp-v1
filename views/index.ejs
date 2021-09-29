@@ -1,53 +1,147 @@
-<%- include('../views/partials/html-head') %>
-<%- include('../views/partials/nav') %>
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <title><%= //title %></title>
+  <body class =" bg-gradient-to-tr from-gray-700  to-green-400 bg-cover bg-auto bg-no-repeat ">
+<section> 
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <div class="container-fluid text-gray-600"><a href="/">Kelp</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="navbar-nav me-auto my-4 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/restaurants">Dope Spots</a>
+            </li>
+            <% if (user) { %>
+            <li class="nav-item">
+              <a class="nav-link"  href="/profiles">View Users</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="/restaurants/new">Post Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="/restaurants/show">Reviews</a>
+            </li>
+           
+              
+                <% } %>
+              </ul>
+            </li>
+            
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+      <% if (user) { %>
+        <div id="profile-dropdown" class="dropdown text-end">
+          <a 
+            id="dropdownUser"
+            href="/profiles/<%= user.profile._id %>"
+            class="d-block link-light text-decoration-none"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <% if(user?.profile?.avatar) {%>
+              <img 
+                class="rounded-circle avatar-img"
+                src="<%= user.profile.avatar %>" 
+                alt="Your avatar"
+                href="/profiles/<%= user.profile._id %>"
+              >
+            <% } else { %>
+              <img
+                class="avatar-img"
+                alt="A placeholder avatar"
+                href="/profiles/<%= user.profile._id %>"
+              >
+            <% } %> 
+          </a>
+         <!-- dropdown menu -->
+         <ul 
+         class="dropdown-menu bg-secondary" 
+         aria-labelledby="dropdownUser"
+       >
+         <li>
+           <a 
+             href="/profiles/<%= user.profile._id %>" 
+             class="dropdown-item bg-secondary text-white"
+           >
+             My Profile
+           </a>
+         </li>
+         <li><hr class="dropdown-divider bg-secondary text-white"></li>
+         <li>
+           <a 
+             href="/auth/logout" 
+             class="dropdown-item bg-secondary text-white"
+           >
+             Sign Out
+           </a>
+         </li>
+       </ul>
+        </div>
+      <% } else { %>
+        <a href="/auth/google">
+          <button type="submit">
+            <img  alt="Sign in with Google" />
+          </button>
+        </a>
+      <% } %>
+    </div>
+    </div>
+    </nav>
+  </section> 
+    
 <!--  profile show view  -->
 
-
+<div class ="  ">
   <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   
   
-    <main class="px-3">
-      <h1>Cover your page.</h1>
-      <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-      <p class="lead">
-        <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn more</a>
+    <main class="px-3 mt-40 ml-40 w-75">
+      <h1 class="text-center"> Welcome! </h1>
+      <p class="lead text-center mb-4  ">Here at Kelp<br> We are focused on promoting the top restaurants and bars in NYC, while highlighting vegetarian and pescetarian culinary professional institutions.</p>
+      <p class="text-center  ">
+        <a href="#" class="bg-white p-3 mt-9 border-white bg-white text-black text-2xl font-bold align-middle rounded-lg ">
+          Learn more
+        </a>
       </p>
     </main>
   
-    <footer class="mt-auto text-white-50">
-      <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
-    </footer>
+
   </div>
-  
+  </div>
   
       
-  
 
-<!-- <h1 class="home-logo"> | WELCOME TO KELP |</h1> -->
-
-<!-- <div class="home-card text-center w-screen-50" 
-
->
-    
-<div 
-class="card-body text-center"
-id="home-logo">
-    <h1 
-    class="card-title " 
-        >
-        | WELCOME TO KELP |
-    </h1>
-    <p class="card-text" id="home-body">Here at Kelp<br> We are focused on promoting the top restaurants and bars in NYC, while highlighting vegetarian and pescetarian culinary professional institutions.</p>
-  </div>
-    <!-- <ul class="card-body " >
-      <li class="list-group-item">Full Restaurant Details Form</li>
-      <li class="list-group-item">Friends!</li>
-      <li class="list-group-item">Restaurant of the Week</li>
-    </ul> -->
-  <!--   <div class="card-body">
-        <a href="#" class="card-link disabled">Card link</a>
-        <a href="#" class="card-link">Another link</a>
-      </div> -->
-  
-
-<%- include('../views/partials/footer') %>
+  <footer class="text-center 
+  inset-x-0
+   my-96 align-text-bottom">
+    <h4> Kelp </h4> 
+    <h6> a collection of food & beverage works by <em> Nick Rodriguez and friends</em></h6>
+    <div class='footnotes'>
+      <h6> Join Our Team</h6>
+      <h6> Contact US</h6>
+      <h6>Mediamarketing </h> 
+      </div>
+      
+    </footer>
+</body>
+  <script 
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+  crossorigin="anonymous"
+></script>
+</html>

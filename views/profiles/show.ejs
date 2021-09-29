@@ -8,8 +8,9 @@
   </style>
 <% } %>
 
+
 <main>
-  <section class="bg-success text-secondary px-4 py-5 text-center">
+  <section class="bg-dark text-secondary px-4 py-5 text-center">
     <% if (profile.avatar) { %>
       <img
         class="image-rounded" 
@@ -52,13 +53,13 @@
     </div>
     <% if (user.profile._id.toString() === profile._id.toString()) { %>
       <%# This is where we'll add the UI to edit a profile %> 
-      <!-- <a 
+      <a 
         class="btn btn-warning"
         role="button" 
-        href=""
+        href="/profiles/<%= profile._id %>/edit"
       >
         Edit Profile
-      </a> -->
+      </a>
       <a 
         class="btn btn-danger ms-4"
         role="button" 
@@ -68,29 +69,26 @@
       </a>
     <% } %>
     <%# This is where we'll add a button to 'friend/unfriend' a user %> 
+    <%# if this is not my profile page          &&  the user being viewed is not in my friends list %> 
     <% if (!profile._id.equals(userProfile._id) && !userProfile.friends.includes(profile._id)) { %>
-    <button>    <a href="/profiles/<%= profile._id %>/friend" class="btn btn-primary">
-          Add Friend
-        </a></button>
-      <% } %>
-      <% if (!profile._id.equals(userProfile._id) && userProfile.friends.includes(profile._id)) { %>
-        <a href="/profiles/<%= profile._id %>/unfriend" class="btn btn-primary">
-          Remove Friend
-        </a>
-      <% } %>
+      <a href="/profiles/<%= profile._id %>/friend" class="btn btn-primary">
+        Add Friend
+      </a>
+    <% } %>
+    <%# if this is not my profile page          &&  the user being viewed is in my friends list %> 
+    <% if (!profile._id.equals(userProfile._id) && userProfile.friends.includes(profile._id)) { %>
+      <a href="/profiles/<%= profile._id %>/unfriend" class="btn btn-primary">
+        Remove Friend
+      </a>
+    <% } %>
   </section>
- <!--  display restaurants  -->
- <!-- <h2 class="mb-3"><%= // profile.name %>'s restaurants</h2>
- <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g5 px-1">
   <section class="bg-light pt-3">
     <div class="container">
-      <h2 class="mb-3"><%= // profile.name %>'s friends</h2>
+      <h2 class="mb-3"><%= profile.name %>'s friends</h2>
       <div
         class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g1 px-1"
-      > -->
-     
-    
-      <%# This is where we'll display our friends %> 
+      >
+      <%# This is where we'll display our friends %>
       <% profile.friends.forEach(friend => { %>
         <div class="col">
           <a class="text-decoration-none" href="/profiles/<%= friend._id %>">
@@ -100,16 +98,14 @@
                   class="card-img-top"
                   src="<%= friend.avatar %>"
                   alt="<%= friend.name %>'s avatar"
-                  width="10px"
-                 
+                  width="100%"
                 />
               <% } else {%>
                 <img
                   class="card-img-top"
                   src="/images/icons/user.png"
                   alt="A placeholder avatar"
-                  width="10px"
-                  
+                  width="100%"
                   />
                   <% } %>
                   <div class="card-body">
@@ -121,12 +117,13 @@
                 </div>
               </a>
             </div>
-            <% }) %>
+        <% }) %> 
       </div>
       <!-- display user restaurants -->
       <h2 class="mb-3"><%= profile.title %>'s restaurants</h2>
       <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g5 px-1">
-        <%# This is where we'll loop over our games! %> 
+        <%# This is where we'll loop over our restaurants! %> 
+       
       </div>
     </div>
   </section>

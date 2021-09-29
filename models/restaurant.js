@@ -16,6 +16,10 @@ const restaurantSchema = new mongoose.Schema({
   title: String, 
   imageURL: String, 
   content: String, 
+  rating: {
+    type: Number,
+    min: 1, max: 5
+},
   reviews: [{type: Schema.Types.ObjectId, ref: "Review"}],
   profile: { type: Schema.Types.ObjectId, ref: "Profile" },
   // menuItems: [{type: Schema.Types.ObjectId, ref: "Menu Items"}] 

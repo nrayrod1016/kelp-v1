@@ -7,8 +7,8 @@ export {
   newRestaurant,
   addRestaurant as create,
   // delRestaurant,
-  restaurantProfile as show
-  // search
+  restaurantProfile as show,
+  search
 }
 
 
@@ -29,21 +29,21 @@ function index(req, res, next) {
 }
 
 
-// function search(req, res) { 
-//       res.find((req.body.search) 
-//       .then((restaurant) => { 
-//         res.render('restaurants/show', {
-//         })
-//       })
-//       )
-//       .catch(err => { 
-//         console.log(err)
-//         res.redirect('/'), {
-//           title: 'Search results',
-//           results: response.data.results
-//         }
-//       })
-// }
+ function search(req, res) { 
+       res.find((req.body.search) 
+       .then((restaurant) => { 
+         res.redirect(`/restaurants/${restaurant._id}`, {
+         })
+       })
+       )
+       .catch(err => { 
+         console.log(err)
+         res.redirect('/'), {
+           title: 'Search results',
+           results: response.data.results
+         }
+       })
+ }
 
 
 function addRestaurant(req, res) {

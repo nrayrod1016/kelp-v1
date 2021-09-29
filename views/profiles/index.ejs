@@ -4,11 +4,11 @@
 <main class="">
   <div class="container py-5 px-3">
     <div 
-      class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g5 g-sm-3 g-xxl-5 px-sm-5 px-4"
+    class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g5 g-sm-3 g-xxl-5 px-sm-5 px-4"
     >
       <% profiles.forEach(profile => { %>
         <div class="col">
-          <a class="text-decoration-none" href="/profiles/<%= profile._id %>">
+          <a class="text-decoration-none " href="/profiles/<%= profile._id %>">
             <div class="card shadow-sm">
               <% if (profile.avatar) { %>
                 <img
@@ -23,7 +23,7 @@
                   class="card-img-top"
                   alt="A placeholder avatar"
                   width="250px"
-                  height="350px"
+                  height="300px"
                 />
               <% } %>
               <div class="card-body">
@@ -43,3 +43,4 @@
 </main>
 
 
+<%- include('../partials/footer') %>

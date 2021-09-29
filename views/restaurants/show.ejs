@@ -1,7 +1,7 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 <title> Restaurant Profile Page </title> 
-<style>
+<!-- <style>
   .navbar{ 
     background: black;
     opacity: 50%; 
@@ -17,133 +17,112 @@
   
 }
 
-</style> 
+</style>  -->
 <div id="showPage"> 
+  <h1>CHECK</h1>
 <main class="container" id="store">
-  <section class="p-4 p-md-5 mb-4 text-white rounded bg-dark mx-4">
+  <section class="p-4 p-md-5 mb-4  rounded  mx-4">
     <div class="col-md-8 text-light px-0">
-      <h3 class="fs-1 fst-italic"><h1 id="rest-title"> <%= restaurant.title %> </h1>
+      <h1 class="text-center font-serif text-2xl" id="rest-title"> <%= restaurant.title %> </h1>
 <!-- add image -->
 <img src="<%=restaurant._id.imageURL %> ">
-<!-- </button>Restaurant Description</button> -->
+
 <!-- post reviews here  -->
 <!-- Update to restaurant -->
 
 
-      <div id='posts'>
-      <!-- add review form   -->
-<form action="/reviews/<%=restaurant._id%>" method="POST">
-        <div class="mb-3">
-          <label>Review</label>
-          <div class="col-md-6">
-          <input name="title"  placeholder="Restaurant">
-          </div>
+<div id='posts'>
+  <!-- add review form   -->
+  <div class='container card mt-4 p-4'>
+    <h1 class="text-gray-800 text-xl font-bold text-center ">Leave A Review</h1>
+    <span>Bootstrap comment prototype + validation w/o regex</span>
+    <hr>
+    <form action="/reviews/<%=restaurant._id%>" method="POST">
+      <div class="form-group">
+        <div class="form-group">
+          <input name="title" placeholder="Review Title" row="3" class="form-control mb-1" >
+          <span class="text-danger" style="display: none"></span>
+          <textarea class="form-control mt-2" name="content" rows="2" placeholder="Enter your review here..."></textarea>
+          <label class="text-danger" style="display: none">How was it?</label>
+          <select class="form-control mt-2" name="rating" rows="2" placeholder="Enter your review here...">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option> 
+          </select>
+          <span class="text-danger mb-5" id="error-comment" style="display: none"></span>
         </div>
-        <div class="mb-3">
-          <label>leave review</label>
-            <textarea name="content" rows="3"></textarea>
-          </div> 
-        </br>
-        
-        
-   
-<!-- RATINGINPUT  -->
-    <select 
-      class="form-select" 
-      name="rating"
-    >
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-        
-        </select>        
-     
       </div>
-    
-    </body>
- 
-  </br>
-
-    <button href="/restaurants"> Submit Review</button>
-
-  </form> 
-
-
+      <div class="m-3"></div>
+      <button href="/restaurants" type="submit" id="submit" class="btn btn-primary float-right ">Submit Review</button>
+    </form>
+    <hr>
+    <div id="reviews">
+  
+    </div>
+  </div>
+  
 
 
 
 <div id='posts'>
 
 <section> 
+  <h1>CHECK DELETE SECTION</h1>
   <% restaurant.reviews.forEach(function(review) { %>
-        <div class="card-header">
-          <a href="/reviews/<%= review._id %>"> <%= review.title %> </a>
-        </div>
+    <div class="m-5"> 
+        <div class="card">
+          <div class="card-header">
+            <div class="text-black"><%= review.author %>
+            </div>
+          </div>
         <div class="card-body">
-          <blockquote class="blockquote mb-0">
-            <p><%= review.content %></p>
-            <footer class="blockquote-footer"><%= review.author.title %></footer>
-            <a href="/reviews/<%= review._id %>">
-              <button>reply to post</button>
+            <h5 class="card-title">
+              <a href="/reviews/<%= review._id %>" class="text-xl"> 
+                <%= review.title %> 
+              </a></h5>
+            <p class="card-text text-black text-center mb-3 ">
+              <%= review.content %>
+            </p>
+          <div class="text-center justify-evenly ">
+            <a href="/restaurants" class="btn btn-primary">
+              reply to post
             </a>
+            <form 
+            class="ml-32 " 
+            action="/reviews/<%= review._id%>?_method=DELETE" 
+            method="POST"> 
+              <button class="btn btn-danger ">
+                DELETE
+              </button>
+            </form>
+          </div> 
+
+          </div>
+        </div>
+       
+      </div>
+      
    
       
        <!--  DELETE BUTTON  -->
-  
 
-    <% if (user.profile._id.toString() === review.author._id.toString()) { %> 
-  <form action="/reviews/<%= review._id%>?_method=DELETE" method="POST"> 
-    <li> 
- <%= review.title %>
- <%= //review.delete %> 
-  <button>
-    DELETE
-  </button>
-    </li> 
-    </form>
+ 
 
 
 
 
   </section>
-<% } %> 
+
   
-<!--  UPDATE FORM  -->
-  <section> 
-<form action="/reviews/<%= review._id %>?_method=PUT" method="POST">
-  <ol> 
-  <input type="text" name="title"  placeholder="review title"></ol> 
-  <textarea name="content" rows="3"></textarea>
-</br>     
-
-            <select 
-class="form-select" name="rating"
->
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-</select></br>     
-
-<button>
-
-  UPDATE
-
-</button>
-</form>
 
 
 
-  </section>
-
-
-
-
-
-<% }) %> 
+  <% }) %> 
+  
 </div> 
 
 </div>
+
+<%- include('../partials/footer') %>

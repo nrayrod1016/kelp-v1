@@ -3,18 +3,31 @@
  <%- include('../partials/nav') %>
  <style></style> 
     <div class="container">
-      <h2 class="card-title">Restaurants Section</h2>
+      <h2 class="card-title text-center text-white text-2xl font-serif ">Restaurant Directory</h2>
 <!--  card title below  -->
 <!-- will show here  -->
-
-  
+<div class="container py-5 px-3">
+<div 
+class="row row-cols-3 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g5 g-sm-3 g-xxl-5 px-sm-5 px-4"
+>
 <% restaurants.forEach(restaurant => { %>
-  <a href="/restaurants/<%= restaurant._id %>"><h3><%= restaurant.title %>  </h3> </a>
-  
-    <img src="<%= restaurant.avatar %>" alt="">
-   
-      
-          <% }) %>
 
+  
+  <div class="col m-5 hover:shadow-xl transition duration-500 transform hover:scale-105 cursor-pointer"> 
+    <div class="card m-2 " style="width: 18rem;">
+      <img src="<%= restaurant.avatar %>" alt="">
+      <div class="card-body">
+        <h5 class="card-title text-xl"><a href="/restaurants/<%= restaurant._id %>"><h3><%= restaurant.title %>  </h3> </a></h5>
+        <p class="text-black"><%= restaurant.rating %> </p>
+        <p class="card-text"><%= restaurant.content %> </p>
+        <a href="/restaurants/<%= restaurant._id %>" class="btn btn-primary">Go to Restaurant Page</a>
+      </div>
+    </div>
+  </div>
+          <% }) %>
+  </div> 
+  </div>
         
  <%- include('../partials/footer') %>
+
+ 
