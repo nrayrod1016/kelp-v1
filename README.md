@@ -41,8 +41,8 @@ Nick is a full stack web developer from the NYC area, with a passion for food, c
 
 ## Screenshots
 
-![Screenshot 1](public/screenshots/Kelphomepage.png)
-![Screenshot 2](public/screenshots/CreateRespage.png)
+![Screenshot 1](public/images/Kelphomepage.png)
+![Screenshot 2](public/images/CreateRespage.png)
 
 
 [Back to Top](#top)
