@@ -1,5 +1,6 @@
-# Kelp by kelp 
-# #Kelp is an app where a users will be able to add restaurants (mainly vegetarian and pescatarian) and share them with other users. Users will be able to interact with each other through these restaurant posts. My inspiration came from my love/ background of food... and the industry I guess. 
+# KELP
+## Introduction
+Kelp is an app where a users will be able to add restaurants and share them with other users. Users will be able to interact with each other through these restaurant posts. My inspiration came from my love/ background of food... and the industry I guess. 
 
 # Bio 
 ## Getting started 
@@ -11,37 +12,39 @@
 
 
 #
-#Getting Started: 
+## Getting Started: 
 #link to site : https://glacial-plains-71834.herokuapp.com/
 
-#ERD
-<img src="public/images/Kelp-v1-ERD.png">
+## Tech Framework
+### This app uses:
+
+* [Node.js](https://nodejs.org/en/) v 14.17.1 & [Express](https://expressjs.com/) v 4.17.1
+* [MongoDB](https://www.mongodb.com/cloud/atlas)
+* [TailwindCSS](https://tailwindcss.com/)
+* [dot env](https://www.npmjs.com/package/dotenv)
+* [Mongoose](https://www.npmjs.com/package/mongoose)
+* CSS
+* Javascript
+
+## This app is hosted at: 
+* [GitHub Repo](https://github.com/nrayrod1016/kelp-v1)
+* [Heroku Hosted Site](https://glacial-plains-71834.herokuapp.com/)
+
+## About the Developer
+### Nick Rodriguez
+
+Nick is a full stack web developer from the NYC area, with a passion for food, culture and technology. Nick decided to get into software development after after a 5 years in the Hospitality Management Industry. Learn more about Nick at these links:
+
+* [LinkedIn](https://www.linkedin.com/in/nicholas-r-rodriguez/)
+* [GitHub](https://github.com/nrayrod1016)
 
 
+## Screenshots
 
-#TRELLO 
-<img src="public/images/trelloboard.png">
-
-#Landing Page 
-<img src="public/images/landingpage.png">
-
-#Restaurant Page 
-<img src="public/images/restaurantShowpage.png">
+![Screenshot 1](public/screenshots/Kelphomepage.png)
+![Screenshot 2](public/screenshots/CreateRespage.png)
 
 
-# Technologies
+[Back to Top](#top)
 
-
-HTML 
-CSS
-JS
-Node.js
-EJS
-BOOTSTRAP
-Google OAuth 2.0
-Bootstrap
-
-
-# Future Enhancements 
-1) Add an api.
  
