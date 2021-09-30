@@ -28,7 +28,7 @@ Kelp is an app where a users will be able to add restaurants and share them with
 
 ## This app is hosted at: 
 * [GitHub Repo](https://github.com/nrayrod1016/kelp-v1)
-* [Heroku Hosted Site](https://glacial-plains-71834.herokuapp.com/)
+* [Hosted Site](https://nrayrod1016.github.io/kelp-v1/)
 
 ## About the Developer
 ### Nick Rodriguez
