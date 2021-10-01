@@ -25,13 +25,13 @@ Kelp is an app where a users will be able to add restaurants and share them with
 
 ## This app is hosted at: 
 * [GitHub Repo](https://github.com/nrayrod1016/kelp-v1)
-* [Hosted Site](https://nrayrod1016.github.io/kelp-v1/)
+* [Hosted Site](https://glacial-plains-71834.herokuapp.com/)
 
 ## About the Developer
 ### Nick Rodriguez
 
 Nick is a full stack web developer from the NYC area, with a passion for food, culture and technology. Nick decided to get into software development after after a 5 years in the Hospitality Management Industry. Learn more about Nick at these links:
-
+d
 * [LinkedIn](https://www.linkedin.com/in/nicholas-r-rodriguez/)
 * [GitHub](https://github.com/nrayrod1016)
 
