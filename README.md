@@ -11,9 +11,6 @@ Kelp is an app where a users will be able to add restaurants and share them with
 - Users will be able to leave reviews reply to them and delete reviews 
 
 
-#
-## Getting Started: 
-#link to site : https://glacial-plains-71834.herokuapp.com/
 
 ## Tech Framework
 ### This app uses:
